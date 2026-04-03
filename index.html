@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>大模型最新动态及竞对价格对比日报</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+        
+        .header .subtitle {
+            font-size: 1.1em;
+            opacity: 0.9;
+            margin-bottom: 10px;
+        }
+        
+        .header .update-date {
+            font-size: 0.95em;
+            opacity: 0.8;
+        }
+        
+        .header .data-source {
+            margin-top: 20px;
+            padding: 15px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 8px;
+            font-size: 0.9em;
+        }
+        
+        .header .data-source a {
+            color: #ffd700;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+        
+        .header .data-source a:hover {
+            text-decoration: underline;
+        }
+        
+        .content {
+            padding: 30px;
+        }
+        
+        .section {
+            margin-bottom: 40px;
+        }
+        
+        .section-title {
+            font-size: 1.5em;
+            color: #1e3c72;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #667eea;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .section-title::before {
+            content: '';
+            width: 4px;
+            height: 24px;
+            background: #667eea;
+            border-radius: 2px;
+        }
+        
+        .note {
+            background: #f0f4ff;
+            border-left: 4px solid #667eea;
+            padding: 15px 20px;
+            margin-bottom: 20px;
+            border-radius: 0 8px 8px 0;
+            color: #4a5568;
+            font-size: 0.95em;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+        
+        thead {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        
+        th {
+            padding: 16px 12px;
+            text-align: center;
+            font-weight: 600;
+            font-size: 0.95em;
+            position: sticky;
+            top: 0;
+        }
+        
+        td {
+            padding: 14px 12px;
+            text-align: center;
+            border-bottom: 1px solid #e2e8f0;
+            font-size: 0.9em;
+        }
+        
+        tbody tr:hover {
+            background: #f7fafc;
+        }
+        
+        tbody tr:last-child td {
+            border-bottom: none;
+        }
+        
+        .category-cell {
+            font-weight: 600;
+            color: #2d3748;
+            background: #f7fafc;
+        }
+        
+        .model-name {
+            font-weight: 600;
+            color: #1e3c72;
+        }
+        
+        .price-cell {
+            font-family: 'SF Mono', Monaco, monospace;
+            font-weight: 600;
+        }
+        
+        .price-bailian {
+            color: #667eea;
+        }
+        
+        .price-doubao {
+            color: #ed8936;
+        }
+        
+        .diff-better {
+            color: #38a169;
+            font-weight: 600;
+            background: #f0fff4;
+            padding: 4px 8px;
+            border-radius: 4px;
+        }
+        
+        .diff-worse {
+            color: #e53e3e;
+            font-weight: 600;
+            background: #fff5f5;
+            padding: 4px 8px;
+            border-radius: 4px;
+        }
+        
+        .diff-same {
+            color: #718096;
+            font-weight: 600;
+        }
+        
+        .diff-na {
+            color: #a0aec0;
+        }
+        
+        .tag {
+            display: inline-block;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 0.8em;
+            font-weight: 600;
+        }
+        
+        .tag-bailian {
+            background: #e6fffa;
+            color: #319795;
+        }
+        
+        .tag-doubao {
+            background: #fffaf0;
+            color: #dd6b20;
+        }
+        
+        .multimedia-table th,
+        .multimedia-table td {
+            text-align: left;
+        }
+        
+        .multimedia-table td:nth-child(3),
+        .multimedia-table td:nth-child(5),
+        .multimedia-table td:nth-child(6) {
+            text-align: center;
+        }
+        
+        .footer {
+            background: #f7fafc;
+            padding: 20px;
+            text-align: center;
+            color: #718096;
+            font-size: 0.85em;
+            border-top: 1px solid #e2e8f0;
+        }
+        
+        @media (max-width: 1200px) {
+            .content {
+                padding: 20px;
+            }
+            
+            table {
+                font-size: 0.85em;
+            }
+            
+            th, td {
+                padding: 10px 8px;
+            }
+        }
+        
+        .summary-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .summary-card {
+            background: white;
+            border-radius: 12px;
+            padding: 24px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            border-left: 4px solid;
+        }
+        
+        .summary-card.bailian {
+            border-left-color: #667eea;
+        }
+        
+        .summary-card.doubao {
+            border-left-color: #ed8936;
+        }
+        
+        .summary-card.same {
+            border-left-color: #38a169;
+        }
+        
+        .summary-card h3 {
+            font-size: 0.9em;
+            color: #718096;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .summary-card .number {
+            font-size: 2em;
+            font-weight: 700;
+            color: #2d3748;
+        }
+        
+        .summary-card.bailian .number {
+            color: #667eea;
+        }
+        
+        .summary-card.doubao .number {
+            color: #ed8936;
+        }
+        
+        .summary-card.same .number {
+            color: #38a169;
+        }
+        
+        .dashboard {
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4e8ec 100%);
+            padding: 30px;
+            margin: -30px -30px 30px -30px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        
+        .dashboard-title {
+            font-size: 1.3em;
+            color: #1e3c72;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .dashboard-title::before {
+            content: '📊';
+            font-size: 1.2em;
+        }
+        
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        
+        .dashboard-card {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+            border-top: 3px solid;
+        }
+        
+        .dashboard-card.qwen {
+            border-top-color: #667eea;
+        }
+        
+        .dashboard-card.industry {
+            border-top-color: #ed8936;
+        }
+        
+        .dashboard-card.conclusion {
+            border-top-color: #38a169;
+        }
+        
+        .dashboard-card h4 {
+            font-size: 0.95em;
+            color: #4a5568;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .dashboard-card.qwen h4::before {
+            content: '🚀';
+        }
+        
+        .dashboard-card.industry h4::before {
+            content: '📰';
+        }
+        
+        .dashboard-card.conclusion h4::before {
+            content: '💡';
+        }
+        
+        .dashboard-card ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .dashboard-card li {
+            padding: 6px 0;
+            font-size: 0.88em;
+            color: #4a5568;
+            line-height: 1.5;
+            border-bottom: 1px dashed #e2e8f0;
+        }
+        
+        .dashboard-card li:last-child {
+            border-bottom: none;
+        }
+        
+        .dashboard-card li::before {
+            content: '•';
+            color: #667eea;
+            font-weight: bold;
+            margin-right: 8px;
+        }
+        
+        .dashboard-card.industry li::before {
+            color: #ed8936;
+        }
+        
+        .dashboard-card.conclusion li::before {
+            color: #38a169;
+        }
+        
+        .conclusion-text {
+            font-size: 0.9em;
+            color: #2d3748;
+            line-height: 1.6;
+            padding: 10px;
+            background: #f0fff4;
+            border-radius: 8px;
+            border-left: 3px solid #38a169;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>大模型最新动态及竞对价格对比日报</h1>
+            <div class="subtitle">百炼 vs 豆包 大模型API服务价格体系全面对比分析</div>
+            <div class="update-date">更新日期: 2026-04-03</div>
+            <div class="data-source">
+                数据来源: 
+                <a href="https://help.aliyun.com/zh/model-studio/models" target="_blank">百炼官方文档</a> |
+                <a href="https://www.volcengine.com/docs/82379/1544106" target="_blank">豆包官方文档</a>
+            </div>
+        </div>
+        
+        <div class="content">
+            <div class="dashboard">
+                <h3 class="dashboard-title">最新动态汇总</h3>
+                <div class="dashboard-grid">
+                    <div class="dashboard-card qwen">
+                        <h4>千问大模型最新动态</h4>
+                        <ul>
+                            <li>Qwen3.6-Plus于4月2日正式发布，原生多模态+100万上下文，编程Agent能力超越GLM-5和Kimi-K2.5</li>
+                            <li>Qwen3.5-Max预览版首度亮相LMArena榜单，问鼎中国最强大模型</li>
+                            <li>百炼新增wan2.7-image系列图像模型及MiniMax-M2.7，Qwen3.6-Max及多款开源模型即将发布</li>
+                        </ul>
+                    </div>
+                    <div class="dashboard-card industry">
+                        <h4>行业最新动态（近3天）</h4>
+                        <ul>
+                            <li>OpenAI发布GPT-5.4，成为首个能直接操控计算机的通用AI模型</li>
+                            <li>2026年智能体产业化元年开启，AI Agent正式迈入规模化商业应用阶段</li>
+                            <li>3月全球AI智能体加速落地，开源项目OpenClaw获GitHub超30万星标</li>
+                        </ul>
+                    </div>
+                    <div class="dashboard-card conclusion">
+                        <h4>价格对比结论</h4>
+                        <div class="conclusion-text">
+                            截至2026年4月3日，百炼在旗舰模型(qwen3-max，便宜22%)和新发布高端模型(qwen3.6-plus，便宜38%)两档价格占优；豆包在Plus(便宜25%)、Kimi(便宜50%)、GLM(便宜33%)、Code(便宜20%)、Vision(便宜20%)五档价格更优；双方Flash/Mini、DeepSeek系列价格持平。
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="note">
+                <strong>价格口径说明：</strong>单价取数口径为单次请求的输入Token数 0&lt;Token&lt;=32K，单位为元/百万token，非思考模式
+            </div>
+            
+            <div class="summary-cards">
+                <div class="summary-card bailian">
+                    <h3>百炼价格更优</h3>
+                    <div class="number">2项</div>
+                </div>
+                <div class="summary-card doubao">
+                    <h3>豆包价格更优</h3>
+                    <div class="number">5项</div>
+                </div>
+                <div class="summary-card same">
+                    <h3>价格相同</h3>
+                    <div class="number">3项</div>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2 class="section-title">文本生成模型价格对比</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th rowspan="2">模型分类</th>
+                            <th rowspan="2">模型介绍/对标依据</th>
+                            <th rowspan="2">潜在目标客户群体/应用场景</th>
+                            <th rowspan="2">百炼模型</th>
+                            <th rowspan="2">对标豆包模型</th>
+                            <th colspan="2">百炼价格<br>(元/百万tokens)</th>
+                            <th colspan="2">豆包价格<br>(元/百万tokens)</th>
+                            <th rowspan="2">价格差异</th>
+                        </tr>
+                        <tr>
+                            <th>input</th>
+                            <th>output</th>
+                            <th>input</th>
+                            <th>output</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="category-cell">通义千问</td>
+                            <td>双方各自最强旗舰模型，适合复杂多步骤任务</td>
+                            <td>高端B端用户、科研人员、专业开发者</td>
+                            <td class="model-name"><span class="tag tag-bailian">qwen3-max</span></td>
+                            <td class="model-name"><span class="tag tag-doubao">doubao-seed-2.0-pro</span></td>
+                            <td class="price-cell price-bailian">2.5</td>
+                            <td class="price-cell price-bailian">10</td>
+                            <td class="price-cell price-doubao">3.2</td>
+                            <td class="price-cell price-doubao">16</td>
+                            <td><span class="diff-better">百炼便宜 22%</span></td>
+                        </tr>
+                        <tr>
+                            <td class="category-cell">通义千问</td>
+                            <td>4月2日新发布，原生多模态+100万上下文，编程Agent能力超越同尺寸模型</td>
+                            <td>编程场景、智能体开发、高端B端用户</td>
+                            <td class="model-name"><span class="tag tag-bailian">qwen3.6-plus</span></td>
+                            <td class="model-name"><span class="tag tag-doubao">doubao-seed-2.0-pro</span></td>
+                            <td class="price-cell price-bailian">2.0</td>
+                            <td class="price-cell price-bailian">12.0</td>
+                            <td class="price-cell price-doubao">3.2</td>
+                            <td class="price-cell price-doubao">16.0</td>
+                            <td><span class="diff-better">百炼便宜 38%/25%</span></td>
+                        </tr>
+                        <tr>
+                            <td class="category-cell">通义千问</td>
+                            <td>效果/速度/成本均衡的中档模型，支持多模态输入</td>
+                            <td>最划算高性能模型，C端应用和中小企业B端服务</td>
+                            <td class="model-name"><span class="tag tag-bailian">qwen3.5-plus</span></td>
+                            <td class="model-name"><span class="tag tag-doubao">doubao-seed-2.0-lite</span></td>
+                            <td class="price-cell price-bailian">0.8</td>
+                            <td class="price-cell price-bailian">4.8</td>
+                            <td class="price-cell price-doubao">0.6</td>
+                            <td class="price-cell price-doubao">3.6</td>
+                            <td><span class="diff-worse">豆包便宜 25%</span></td>
+                        </tr>
+                        <tr>
+                            <td class="category-cell">通义千问</td>
+                            <td>速度最快、成本最低的轻量模型，适合简单任务</td>
+                            <td>轻量级模型，处理简单业务</td>
+                            <td class="model-name"><span class="tag tag-bailian">qwen3.5-flash</span></td>
+                            <td class="model-name"><span class="tag tag-doubao">doubao-seed-2.0-mini</span></td>
+                            <td class="price-cell price-bailian">0.2</td>
+                            <td class="price-cell price-bailian">2.0</td>
+                            <td class="price-cell price-doubao">0.2</td>
+                            <td class="price-cell price-doubao">2.0</td>
+                            <td><span class="diff-same">价格相同</span></td>
+                        </tr>
+                        <tr>
+                            <td class="category-cell">通义千问</td>
+                            <td>百炼独有开源大模型，字节Seed系列为闭源，无直接对标</td>
+                            <td>通过开源建立开发者生态，确立技术标准</td>
+                            <td class="model-name"><span class="tag tag-bailian">qwen3.5-397b-a17b</span></td>
+                            <td class="model-name">暂无对标</td>
+                            <td class="price-cell price-bailian">1.2</td>
+                            <td class="price-cell price-bailian">7.2</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td><span class="diff-na">百炼独有</span></td>
+                        </tr>
+                        <tr>
+                            <td class="category-cell">第三方模型</td>
+                            <td>同一模型，对比两平台托管价格差异</td>
+                            <td>满足客户最佳适配要求，MaaS平台化</td>
+                            <td class="model-name">deepseek-v3.2</td>
+                            <td class="model-name">deepseek-v3.2</td>
+                            <td class="price-cell">2</td>
+                            <td class="price-cell">3</td>
+                            <td class="price-cell">2</td>
+                            <td class="price-cell">3</td>
+                            <td><span class="diff-same">价格相同</span></td>
+                        </tr>
+                        <tr>
+                            <td class="category-cell">第三方模型</td>
+                            <td>深度思考推理模型，同一模型双平台托管</td>
+                            <td>满足客户最佳适配要求</td>
+                            <td class="model-name">deepseek-r1</td>
+                            <td class="model-name">deepseek-r1</td>
+                            <td class="price-cell">4</td>
+                            <td class="price-cell">16</td>
+                            <td class="price-cell">4</td>
+                            <td class="price-cell">16</td>
+                            <td><span class="diff-same">价格相同</span></td>
+                        </tr>
+                        <tr>
+                            <td class="category-cell">第三方模型</td>
+                            <td>百炼已上线K2.5，火山平台主推K2</td>
+                            <td>满足客户最佳适配要求</td>
+                            <td class="model-name">kimi-k2.5</td>
+                            <td class="model-name">kimi-k2</td>
+                            <td class="price-cell price-bailian">4.0</td>
+                            <td class="price-cell price-bailian">21.0</td>
+                            <td class="price-cell price-doubao">2.0</td>
+                            <td class="price-cell price-doubao">8.0</td>
+                            <td><span class="diff-worse">豆包便宜 50%/62%</span></td>
+                        </tr>
+                        <tr>
+                            <td class="category-cell">第三方模型</td>
+                            <td>智谱AI混合推理模型，同一模型双平台托管</td>
+                            <td>满足客户最佳适配要求</td>
+                            <td class="model-name">glm-4.7</td>
+                            <td class="model-name">glm-4.7</td>
+                            <td class="price-cell price-bailian">3.0</td>
+                            <td class="price-cell price-bailian">14.0</td>
+                            <td class="price-cell price-doubao">2.0</td>
+                            <td class="price-cell price-doubao">8.0</td>
+                            <td><span class="diff-worse">豆包便宜 33%/43%</span></td>
+                        </tr>
+                        <tr>
+                            <td class="category-cell">第三方模型</td>
+                            <td>MiniMax M2.5，两平台均已更新到最新版</td>
+                            <td>满足客户最佳适配要求</td>
+                            <td class="model-name">MiniMax-M2.5</td>
+                            <td class="model-name">MiniMax-M2.5</td>
+                            <td class="price-cell">2.1</td>
+                            <td class="price-cell">8.4</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td><span class="diff-na">豆包未上线</span></td>
+                        </tr>
+                        <tr>
+                            <td class="category-cell">垂直领域</td>
+                            <td>双方各自主力代码生成模型，具有Coding Agent能力</td>
+                            <td>面向开发者、企业研发团队，代码生成与调试</td>
+                            <td class="model-name"><span class="tag tag-bailian">qwen3-coder-plus</span></td>
+                            <td class="model-name"><span class="tag tag-doubao">doubao-seed-2.0-code</span></td>
+                            <td class="price-cell price-bailian">4.0</td>
+                            <td class="price-cell price-bailian">16.0</td>
+                            <td class="price-cell price-doubao">3.2</td>
+                            <td class="price-cell price-doubao">16.0</td>
+                            <td><span class="diff-worse">豆包便宜 20%</span></td>
+                        </tr>
+                        <tr>
+                            <td class="category-cell">多模态</td>
+                            <td>具有视觉（图像）理解能力的文本生成模型</td>
+                            <td>需要深度视觉理解的开发者与企业</td>
+                            <td class="model-name"><span class="tag tag-bailian">qwen3-vl-plus</span></td>
+                            <td class="model-name"><span class="tag tag-doubao">doubao-seed-1.6-vision</span></td>
+                            <td class="price-cell price-bailian">1.0</td>
+                            <td class="price-cell price-bailian">10.0</td>
+                            <td class="price-cell price-doubao">0.8</td>
+                            <td class="price-cell price-doubao">8.0</td>
+                            <td><span class="diff-worse">豆包便宜 20%</span></td>
+                        </tr>
+                        <tr>
+                            <td class="category-cell">深度推理</td>
+                            <td>基于Qwen训练的推理模型，强化学习大幅提升推理能力，豆包暂无独立对标</td>
+                            <td>科研、金融、法律等需要深度逻辑推演的专业用户</td>
+                            <td class="model-name"><span class="tag tag-bailian">qwq-plus</span></td>
+                            <td class="model-name">暂无对标</td>
+                            <td class="price-cell price-bailian">1.6</td>
+                            <td class="price-cell price-bailian">4.0</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td><span class="diff-na">百炼独有</span></td>
+                        </tr>
+                        <tr>
+                            <td class="category-cell">深度推理</td>
+                            <td>支持视觉输入及思维链输出，豆包暂无独立对标</td>
+                            <td>科研、教育等需要深度视觉逻辑分析的专业用户</td>
+                            <td class="model-name"><span class="tag tag-bailian">qvq-max</span></td>
+                            <td class="model-name">暂无对标</td>
+                            <td class="price-cell price-bailian">8.0</td>
+                            <td class="price-cell price-bailian">32.0</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td><span class="diff-na">百炼独有</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="section">
+                <h2 class="section-title">非文本模型价格对比</h2>
+                <table class="multimedia-table">
+                    <thead>
+                        <tr>
+                            <th>分类</th>
+                            <th>百炼模型</th>
+                            <th>百炼价格</th>
+                            <th>百炼计费方式</th>
+                            <th>豆包模型</th>
+                            <th>豆包价格</th>
+                            <th>豆包计费方式</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="category-cell">图像生成 - 文生图</td>
+                            <td class="model-name">wan2.6-t2i</td>
+                            <td class="price-cell price-bailian">0.2</td>
+                            <td>元/张</td>
+                            <td class="model-name">doubao-seedream-4.5</td>
+                            <td class="price-cell price-doubao">0.25</td>
+                            <td>元/张</td>
+                        </tr>
+                        <tr>
+                            <td class="category-cell">图像生成 - 图像编辑</td>
+                            <td class="model-name">wan2.7-image</td>
+                            <td class="price-cell price-bailian">0.2</td>
+                            <td>元/张</td>
+                            <td class="model-name">doubao-seedream-5.0</td>
+                            <td class="price-cell price-doubao">0.2</td>
+                            <td>元/张</td>
+                        </tr>
+                        <tr>
+                            <td class="category-cell">视频生成 - 文生视频</td>
+                            <td class="model-name">wan2.6-t2v</td>
+                            <td class="price-cell price-bailian">0.6</td>
+                            <td>720P 元/秒</td>
+                            <td class="model-name">doubao-seedance-2.0</td>
+                            <td class="price-cell price-doubao">46</td>
+                            <td>元/百万tokens</td>
+                        </tr>
+                        <tr>
+                            <td class="category-cell">视频生成 - 图生视频</td>
+                            <td class="model-name">wan2.6-i2v</td>
+                            <td class="price-cell price-bailian">0.6</td>
+                            <td>720P 元/秒</td>
+                            <td class="model-name">/</td>
+                            <td>/</td>
+                            <td>/</td>
+                        </tr>
+                        <tr>
+                            <td class="category-cell">视频生成 - 图生视频Flash</td>
+                            <td class="model-name">wan2.6-i2v-flash</td>
+                            <td class="price-cell price-bailian">0.3</td>
+                            <td>有声720P 元/秒</td>
+                            <td class="model-name">/</td>
+                            <td>/</td>
+                            <td>/</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>本页面数据仅供参考，实际价格请以官方文档为准 | 数据来源: 阿里云百炼、火山引擎豆包官网</p>
+            <p>数据更新时间: 2026-04-03</p>
+        </div>
+    </div>
+</body>
+</html>
