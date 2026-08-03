@@ -3,72 +3,58 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>大模型价格对比日报 - 百炼 vs 豆包</title>
+<title>大模型价格对比日报 - 百炼 vs 豆包 - 2026-08-03</title>
 <style>
-*{margin:0;padding:0;box-sizing:border-box}
-body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;background:#f5f5f0;color:#333;line-height:1.6}
-.header{background:linear-gradient(135deg,#1a1a2e 0%,#16213e 50%,#0f3460 100%);color:#fff;padding:40px 24px 30px;text-align:center}
-.header h1{font-size:1.8rem;font-weight:700;margin-bottom:6px;letter-spacing:1px}
-.header .subtitle{font-size:0.95rem;opacity:0.85;margin-bottom:4px}
-.header .update-date{font-size:0.82rem;opacity:0.65}
-.container{max-width:1200px;margin:0 auto;padding:0 16px}
-.kpi-row{display:flex;gap:14px;flex-wrap:wrap;justify-content:center;margin:-28px auto 20px;position:relative;z-index:2}
-.kpi-card{background:#fff;border-radius:12px;padding:18px 24px;min-width:160px;text-align:center;box-shadow:0 2px 12px rgba(0,0,0,0.08);flex:1;max-width:220px}
-.kpi-card .num{font-size:2rem;font-weight:700;margin-bottom:2px}
-.kpi-card .label{font-size:0.82rem;color:#888}
-.kpi-card.bailian .num{color:#e65100}
-.kpi-card.doubao .num{color:#1565c0}
-.kpi-card.tie .num{color:#666}
-.kpi-card.total .num{color:#2e7d32}
-.tabs{background:#263238;border-radius:10px;margin:0 auto 20px;max-width:1200px;display:flex;overflow-x:auto;-webkit-overflow-scrolling:touch}
-.tabs button{flex:1;padding:13px 10px;border:none;background:transparent;color:rgba(255,255,255,0.65);font-size:1.08rem;cursor:pointer;transition:all 0.2s;white-space:nowrap;font-weight:500;position:relative}
-.tabs button:hover{color:#fff;background:rgba(255,255,255,0.05)}
-.tabs button.active{color:#fff;background:rgba(255,255,255,0.12)}
-.tabs button.active::after{content:'';position:absolute;bottom:0;left:20%;right:20%;height:3px;background:#ff9800;border-radius:3px 3px 0 0}
-.tab-content{display:none;animation:fadeIn 0.3s}
-.tab-content.active{display:block}
-@keyframes fadeIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
-.section{background:#fff;border-radius:12px;padding:24px;margin-bottom:20px;box-shadow:0 1px 6px rgba(0,0,0,0.06)}
-.section h2{font-size:1.2rem;margin-bottom:16px;padding-bottom:10px;border-bottom:2px solid #f0f0f0;color:#1a1a2e}
-.section h3{font-size:1.05rem;margin:16px 0 10px;color:#37474f}
-table{width:100%;border-collapse:collapse;font-size:0.88rem}
-th{background:#f5f7fa;padding:10px 12px;text-align:left;font-weight:600;color:#555;border-bottom:2px solid #e0e0e0;white-space:nowrap}
-td{padding:9px 12px;border-bottom:1px solid #f0f0f0;vertical-align:middle}
-tr:hover{background:#fafafa}
-.winner-bailian{color:#e65100;font-weight:600}
-.winner-doubao{color:#1565c0;font-weight:600}
-.winner-tie{color:#666;font-weight:600}
-.tag-new{display:inline-block;background:#ff5722;color:#fff;font-size:0.68rem;padding:1px 6px;border-radius:3px;margin-left:4px;font-weight:600;vertical-align:middle}
-.tag-price-drop{display:inline-block;background:#4caf50;color:#fff;font-size:0.68rem;padding:1px 6px;border-radius:3px;margin-left:4px;font-weight:600}
-.note{font-size:0.78rem;color:#999;margin-top:4px}
-.price-unit{font-size:0.72rem;color:#aaa}
-.conclusion-item{padding:12px 16px;margin-bottom:10px;border-radius:8px;border-left:4px solid;font-size:0.92rem}
-.conclusion-item.bailian{border-color:#e65100;background:#fff8f0}
-.conclusion-item.doubao{border-color:#1565c0;background:#f0f7ff}
-.conclusion-item.tie{border-color:#666;background:#f8f8f8}
-.news-item{padding:14px 16px;margin-bottom:12px;border-radius:8px;background:#fafafa;border:1px solid #eee}
-.news-item .date{font-size:0.78rem;color:#888;margin-bottom:4px}
-.news-item .title{font-weight:600;font-size:0.95rem;margin-bottom:4px}
-.news-item .desc{font-size:0.85rem;color:#555}
-.source-tag{display:inline-block;background:#e3f2fd;color:#1565c0;font-size:0.7rem;padding:2px 8px;border-radius:10px;margin-left:6px}
-.overview-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px}
-.overview-card{padding:16px;border-radius:10px;border:1px solid #e8e8e8;background:#fefefe}
-.overview-card h4{font-size:0.95rem;margin-bottom:8px;color:#37474f}
-.overview-card .pair{display:flex;justify-content:space-between;padding:4px 0;font-size:0.85rem;border-bottom:1px solid #f5f5f5}
-.overview-card .pair:last-child{border:none}
-.badge{display:inline-block;padding:2px 8px;border-radius:4px;font-size:0.72rem;font-weight:600;margin-left:6px}
-.badge-bailian{background:#fff3e0;color:#e65100}
-.badge-doubao{background:#e3f2fd;color:#1565c0}
-.badge-tie{background:#f5f5f5;color:#666}
-.footer{text-align:center;padding:30px 16px;font-size:0.78rem;color:#aaa}
-.footer a{color:#888;text-decoration:none}
-@media(max-width:768px){
-.header h1{font-size:1.4rem}
-.kpi-row{flex-direction:column;align-items:center;margin-top:-20px}
-.kpi-card{max-width:100%;width:100%}
-table{font-size:0.78rem}
-th,td{padding:6px 8px}
-.tabs button{font-size:0.92rem;padding:10px 8px}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', sans-serif; background: #f0f2f5; color: #1a1a2e; line-height: 1.6; }
+.header { background: linear-gradient(135deg, #0f0c29, #302b63, #24243e); color: #fff; padding: 32px 24px 20px; text-align: center; }
+.header h1 { font-size: 1.8rem; font-weight: 700; margin-bottom: 6px; }
+.header .subtitle { font-size: 1rem; opacity: 0.85; margin-bottom: 4px; }
+.header .date { font-size: 0.9rem; opacity: 0.7; }
+.kpi-row { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; padding: 20px 16px; margin-top: -10px; }
+.kpi-card { background: #fff; border-radius: 12px; padding: 18px 28px; text-align: center; min-width: 150px; box-shadow: 0 2px 12px rgba(0,0,0,0.08); }
+.kpi-card .num { font-size: 2rem; font-weight: 800; }
+.kpi-card .label { font-size: 0.85rem; color: #666; margin-top: 4px; }
+.kpi-bailian .num { color: #e67e22; }
+.kpi-doubao .num { color: #3498db; }
+.kpi-tie .num { color: #95a5a6; }
+.tab-bar { background: #24243e; display: flex; justify-content: center; gap: 0; overflow-x: auto; position: sticky; top: 0; z-index: 100; }
+.tab-btn { background: none; border: none; color: #aaa; padding: 12px 22px; font-size: 1.08rem; cursor: pointer; transition: all 0.2s; white-space: nowrap; border-bottom: 3px solid transparent; }
+.tab-btn:hover { color: #fff; background: rgba(255,255,255,0.05); }
+.tab-btn.active { color: #fff; border-bottom-color: #f39c12; background: rgba(255,255,255,0.08); font-weight: 600; }
+.tab-content { display: none; padding: 20px 16px; max-width: 1200px; margin: 0 auto; }
+.tab-content.active { display: block; }
+.section-title { font-size: 1.2rem; font-weight: 700; margin: 20px 0 12px; padding-left: 12px; border-left: 4px solid #f39c12; color: #1a1a2e; }
+.card { background: #fff; border-radius: 12px; padding: 20px; margin-bottom: 16px; box-shadow: 0 1px 8px rgba(0,0,0,0.06); overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; font-size: 0.88rem; }
+th { background: #2c3e50; color: #fff; padding: 10px 12px; text-align: left; font-weight: 600; white-space: nowrap; }
+td { padding: 9px 12px; border-bottom: 1px solid #eee; }
+tr:hover td { background: #f8f9fa; }
+.tag-new { background: #e74c3c; color: #fff; font-size: 0.7rem; padding: 1px 6px; border-radius: 4px; margin-left: 6px; font-weight: 700; vertical-align: middle; }
+.tag-hot { background: #f39c12; color: #fff; font-size: 0.7rem; padding: 1px 6px; border-radius: 4px; margin-left: 4px; font-weight: 700; }
+.tag-discount { background: #27ae60; color: #fff; font-size: 0.7rem; padding: 1px 6px; border-radius: 4px; margin-left: 4px; font-weight: 700; }
+.winner { font-weight: 700; }
+.winner-bailian { color: #e67e22; }
+.winner-doubao { color: #3498db; }
+.winner-tie { color: #95a5a6; }
+.pct-diff { font-size: 0.78rem; color: #888; }
+.conclusion-item { padding: 12px 16px; margin-bottom: 8px; border-radius: 8px; display: flex; justify-content: space-between; align-items: center; }
+.conclusion-item.bailian-better { background: #fef5e7; border-left: 4px solid #e67e22; }
+.conclusion-item.doubao-better { background: #eaf2f8; border-left: 4px solid #3498db; }
+.conclusion-item.tie { background: #f4f6f7; border-left: 4px solid #95a5a6; }
+.news-item { padding: 14px 16px; margin-bottom: 10px; background: #fff; border-radius: 8px; border-left: 4px solid #3498db; box-shadow: 0 1px 4px rgba(0,0,0,0.04); }
+.news-item .news-date { font-size: 0.8rem; color: #888; margin-bottom: 4px; }
+.news-item .news-title { font-weight: 600; margin-bottom: 4px; }
+.news-item .news-desc { font-size: 0.88rem; color: #555; }
+.footer { text-align: center; padding: 24px; color: #999; font-size: 0.82rem; }
+@media (max-width: 768px) {
+  .header h1 { font-size: 1.3rem; }
+  .kpi-row { gap: 10px; }
+  .kpi-card { min-width: 100px; padding: 12px 16px; }
+  .kpi-card .num { font-size: 1.5rem; }
+  .tab-btn { padding: 10px 14px; font-size: 0.95rem; }
+  table { font-size: 0.8rem; }
+  th, td { padding: 7px 8px; }
 }
 </style>
 </head>
@@ -77,485 +63,531 @@ th,td{padding:6px 8px}
 <div class="header">
   <h1>大模型价格对比日报</h1>
   <div class="subtitle">阿里云百炼 vs 火山引擎豆包</div>
-  <div class="update-date">更新日期：2026-07-31 | 数据来源：官方定价页 | 价格单位：元/百万Tokens（CNY）</div>
+  <div class="date">更新日期：2026-08-03 | 数据来源：官方定价页</div>
 </div>
-
-<div class="container">
 
 <div class="kpi-row">
-  <div class="kpi-card bailian">
-    <div class="num">5</div>
+  <div class="kpi-card kpi-bailian">
+    <div class="num">12</div>
     <div class="label">百炼更优</div>
   </div>
-  <div class="kpi-card doubao">
-    <div class="num">7</div>
+  <div class="kpi-card kpi-doubao">
+    <div class="num">8</div>
     <div class="label">豆包更优</div>
   </div>
-  <div class="kpi-card tie">
-    <div class="num">1</div>
-    <div class="label">价格相同</div>
-  </div>
-  <div class="kpi-card total">
-    <div class="num">13</div>
-    <div class="label">对比项总计</div>
+  <div class="kpi-card kpi-tie">
+    <div class="num">4</div>
+    <div class="label">价格持平</div>
   </div>
 </div>
 
-<div class="tabs" id="tabBar">
-  <button class="active" onclick="switchTab(0)">总览</button>
-  <button onclick="switchTab(1)">最新动态</button>
-  <button onclick="switchTab(2)">价格结论</button>
-  <button onclick="switchTab(3)">文本模型</button>
-  <button onclick="switchTab(4)">非文本模型</button>
+<div class="tab-bar">
+  <button class="tab-btn active" onclick="showTab('overview')">总览</button>
+  <button class="tab-btn" onclick="showTab('news')">最新动态</button>
+  <button class="tab-btn" onclick="showTab('conclusion')">价格结论</button>
+  <button class="tab-btn" onclick="showTab('text')">文本模型</button>
+  <button class="tab-btn" onclick="showTab('non-text')">非文本模型</button>
 </div>
 
-<!-- Tab 0: 总览 -->
-<div class="tab-content active" id="tab0">
-<div class="section">
-  <h2>对比总览</h2>
-  <p style="margin-bottom:16px;font-size:0.9rem;color:#666">以下为两平台主要文本模型的定价对比（基础阶梯价，单位：元/百万Tokens）。数据截至 2026-07-31，百炼国际站USD价格按汇率 1 USD ≈ 7.25 CNY 折算。</p>
-  <table>
-    <thead>
-      <tr>
-        <th>分类</th>
-        <th>百炼模型</th>
-        <th>百炼 输入/输出</th>
-        <th>豆包模型</th>
-        <th>豆包 输入/输出</th>
-        <th>更优方</th>
-        <th>差异</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>旗舰</td>
-        <td>qwen3.7-max</td>
-        <td>12.00 / 36.00</td>
-        <td>doubao-seed-evolving <span class="tag-new">NEW</span></td>
-        <td class="winner-doubao">6.00 / 30.00</td>
-        <td class="winner-doubao">豆包</td>
-        <td>输入-50%, 输出-17%</td>
-      </tr>
-      <tr>
-        <td>旗舰(上代)</td>
-        <td>qwen3-max</td>
-        <td class="winner-bailian">2.50 / 10.00</td>
-        <td>doubao-seed-2.1-pro</td>
-        <td>6.00 / 30.00</td>
-        <td class="winner-bailian">百炼</td>
-        <td>输入-58%, 输出-67%</td>
-      </tr>
-      <tr>
-        <td>Plus</td>
-        <td>qwen3-plus</td>
-        <td class="winner-bailian">~0.83 / ~5.00</td>
-        <td>doubao-seed-2.1-turbo</td>
-        <td>3.00 / 15.00</td>
-        <td class="winner-bailian">百炼</td>
-        <td>输入-72%, 输出-67%</td>
-      </tr>
-      <tr>
-        <td>标准</td>
-        <td>qwen-plus</td>
-        <td class="winner-bailian">~0.83 / ~2.08</td>
-        <td>doubao-seed-1.6</td>
-        <td>0.80 / 8.00</td>
-        <td class="winner-bailian">百炼</td>
-        <td>输入近同, 输出-74%</td>
-      </tr>
-      <tr>
-        <td>Flash</td>
-        <td>qwen-turbo</td>
-        <td>~0.32 / ~0.63</td>
-        <td>doubao-seed-1.6-flash</td>
-        <td class="winner-doubao">0.15 / 1.50</td>
-        <td><span class="badge badge-doubao">豆包输入优</span><span class="badge badge-bailian">百炼输出优</span></td>
-        <td>输入-53%, 输出+138%</td>
-      </tr>
-      <tr>
-        <td>推理</td>
-        <td>deepseek-r1</td>
-        <td>~4.16 / ~16.63</td>
-        <td>deepseek-r1</td>
-        <td class="winner-doubao">4.00 / 16.00</td>
-        <td class="winner-doubao">豆包</td>
-        <td>输入-4%, 输出-4%</td>
-      </tr>
-      <tr>
-        <td>通用旗舰</td>
-        <td>deepseek-v4-pro</td>
-        <td>~11.96 / ~23.93</td>
-        <td>deepseek-v4-pro</td>
-        <td>12.00 / 24.00</td>
-        <td class="winner-tie">基本持平</td>
-        <td>差异 &lt;1%</td>
-      </tr>
-      <tr>
-        <td>通用</td>
-        <td>deepseek-v3</td>
-        <td>~2.08 / ~8.31</td>
-        <td>deepseek-v3</td>
-        <td class="winner-doubao">2.00 / 8.00</td>
-        <td class="winner-doubao">豆包</td>
-        <td>输入-4%, 输出-4%</td>
-      </tr>
-      <tr>
-        <td>通用(新)</td>
-        <td>deepseek-v3.2</td>
-        <td>~2.08 / ~3.12</td>
-        <td>deepseek-v3.2</td>
-        <td class="winner-doubao">2.00 / 3.00</td>
-        <td class="winner-doubao">豆包</td>
-        <td>输入-4%, 输出-4%</td>
-      </tr>
-      <tr>
-        <td>代码</td>
-        <td>kimi-k2.7-code</td>
-        <td>~6.48 / ~26.92</td>
-        <td>doubao-seed-2.0-code</td>
-        <td class="winner-doubao">3.20 / 16.00</td>
-        <td class="winner-doubao">豆包</td>
-        <td>输入-51%, 输出-41%</td>
-      </tr>
-      <tr>
-        <td>推理(Kimi)</td>
-        <td>kimi-k2.5</td>
-        <td class="winner-bailian">~4.16 / ~21.83</td>
-        <td>doubao-seed-evolving</td>
-        <td>6.00 / 30.00</td>
-        <td class="winner-bailian">百炼</td>
-        <td>输入-31%, 输出-27%</td>
-      </tr>
-      <tr>
-        <td>第三方GLM</td>
-        <td>glm-5.2</td>
-        <td class="winner-bailian">~7.98 / ~27.92</td>
-        <td>glm-5.2</td>
-        <td>8.00 / 28.00</td>
-        <td class="winner-bailian">百炼</td>
-        <td>差异 &lt;1%</td>
-      </tr>
-      <tr>
-        <td>第三方GLM</td>
-        <td>glm-4.7</td>
-        <td>~3.12 / ~14.51</td>
-        <td>glm-4.7</td>
-        <td class="winner-doubao">2.00 / 8.00</td>
-        <td class="winner-doubao">豆包</td>
-        <td>输入-36%, 输出-45%</td>
-      </tr>
-    </tbody>
-  </table>
-  <div class="note">* 百炼价格含国际站USD折算（1 USD ≈ 7.25 CNY），国内站实际价格可能略有差异。阶梯计价取最低阶梯。</div>
-</div>
-</div>
-
-<!-- Tab 1: 最新动态 -->
-<div class="tab-content" id="tab1">
-<div class="section">
-  <h2>近期平台动态</h2>
-
-  <h3 style="color:#e65100">阿里云百炼</h3>
-
-  <div class="news-item">
-    <div class="date">2026-07-21</div>
-    <div class="title">记忆库功能开启商业化</div>
-    <div class="desc">百炼平台「记忆库」功能正式商业化，支持为 Agent 提供长期记忆能力。</div>
-    <span class="source-tag">百炼</span>
+<!-- 总览 -->
+<div id="tab-overview" class="tab-content active">
+  <h3 class="section-title">核心对比速览</h3>
+  <div class="card">
+    <table>
+      <thead>
+        <tr><th>对比维度</th><th>百炼 (Aliyun)</th><th>豆包 (Volcengine)</th><th>优势方</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>旗舰模型 (Max级)</td>
+          <td>qwen3.8-max: 入12 / 出36</td>
+          <td>doubao-seed-evolving: 入6 / 出30</td>
+          <td><span class="winner winner-doubao">豆包</span> <span class="pct-diff">入↓50% 出↓17%</span></td>
+        </tr>
+        <tr>
+          <td>Plus级模型</td>
+          <td>qwen3.7-plus: 入2 / 出8 <span class="tag-discount">8折</span></td>
+          <td>doubao-seed-2.1-pro: 入6 / 出30</td>
+          <td><span class="winner winner-bailian">百炼</span> <span class="pct-diff">入↓67% 出↓73%</span></td>
+        </tr>
+        <tr>
+          <td>Flash级模型</td>
+          <td>qwen3.7-flash: 入0.2 / 出0.8</td>
+          <td>doubao-seed-1.6-flash: 入0.15 / 出1.5</td>
+          <td><span class="winner winner-tie">各有优势</span> <span class="pct-diff">入豆包↓25% 出百炼↓47%</span></td>
+        </tr>
+        <tr>
+          <td>轻量/Mini模型</td>
+          <td>qwen-turbo: 入0.3 / 出0.6</td>
+          <td>doubao-seed-2.0-mini: 入0.2 / 出2</td>
+          <td><span class="winner winner-bailian">百炼</span> <span class="pct-diff">出↓70%</span></td>
+        </tr>
+        <tr>
+          <td>代码模型</td>
+          <td>qwen3-coder-plus: 入4 / 出16</td>
+          <td>doubao-seed-code: 入1.2 / 出8</td>
+          <td><span class="winner winner-doubao">豆包</span> <span class="pct-diff">入↓70% 出↓50%</span></td>
+        </tr>
+        <tr>
+          <td>推理模型</td>
+          <td>deepseek-r1: 入4 / 出16</td>
+          <td>deepseek-r1: 入4 / 出16</td>
+          <td><span class="winner winner-tie">持平</span></td>
+        </tr>
+        <tr>
+          <td>DeepSeek-V4-Pro</td>
+          <td>入12 / 出24</td>
+          <td>入12 / 出24</td>
+          <td><span class="winner winner-tie">持平</span></td>
+        </tr>
+        <tr>
+          <td>DeepSeek-V4-Flash</td>
+          <td>入1 / 出2</td>
+          <td>入1 / 出2</td>
+          <td><span class="winner winner-tie">持平</span></td>
+        </tr>
+        <tr>
+          <td>DeepSeek-V3.2</td>
+          <td>入2 / 出3</td>
+          <td>入2(0-32K) / 出3</td>
+          <td><span class="winner winner-tie">持平</span></td>
+        </tr>
+        <tr>
+          <td>视频生成 (720P)</td>
+          <td>HappyHorse: 0.9元/秒 <span class="tag-discount">6折</span></td>
+          <td>Seedance-2.0: ~0.99元/秒</td>
+          <td><span class="winner winner-bailian">百炼</span></td>
+        </tr>
+        <tr>
+          <td>图像生成</td>
+          <td>qwen-image-2.0: 0.2元/张</td>
+          <td>Seedream-4.0: 0.2元/张</td>
+          <td><span class="winner winner-tie">持平</span></td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 
-  <div class="news-item">
-    <div class="date">2026-07-16</div>
-    <div class="title">Managed Agent 商业化 / 企业知识库(旧)下线</div>
-    <div class="desc">Managed Agent 正式开启商业化计费；同时旧版企业知识库下线。</div>
-    <span class="source-tag">百炼</span>
-  </div>
-
-  <div class="news-item">
-    <div class="date">2026-07-14</div>
-    <div class="title">GLM-5.2 Fast mode 降价 <span class="tag-price-drop">降价</span></div>
-    <div class="desc">百炼宣布 GLM-5.2 Fast mode 模式降价约 20%，降低用户调用 GLM 旗舰模型的成本。</div>
-    <span class="source-tag">百炼</span>
-  </div>
-
-  <div class="news-item">
-    <div class="date">2026-07-09 ~ 07-10</div>
-    <div class="title">老旧模型批量下线</div>
-    <div class="desc">部分老旧长尾模型下线，包括析言 GBI 及相关服务包退市，平台资源进一步优化。</div>
-    <span class="source-tag">百炼</span>
-  </div>
-
-  <div class="news-item">
-    <div class="date">全站公告</div>
-    <div class="title">千问系列全面降价 + Qwen3-Coder-Plus 限时优惠</div>
-    <div class="desc">百炼全站公告：Qwen 系列文本模型降价、VL 视觉模型降价、上下文缓存降价。Qwen3-Coder-Plus 推出限时优惠活动。</div>
-    <span class="source-tag">百炼</span>
-  </div>
-
-  <h3 style="color:#1565c0;margin-top:24px">火山引擎豆包</h3>
-
-  <div class="news-item">
-    <div class="date">2026-07-27 (页面更新)</div>
-    <div class="title">Doubao-Seed-Evolving 上线 <span class="tag-new">NEW</span></div>
-    <div class="desc">火山方舟最新模型 Seed-Evolving 上线，定位为最强旗舰文本模型，定价 6/30 元/百万 tokens。</div>
-    <span class="source-tag">豆包</span>
-  </div>
-
-  <div class="news-item">
-    <div class="date">2026-06-23</div>
-    <div class="title">豆包 2.1 Pro 正式发布</div>
-    <div class="desc">Doubao-Seed-2.1-Pro 发布，输入 6 元/百万 tokens，输出 30 元/百万 tokens，定位旗舰级。同步发布 Seed-2.1-Turbo（3/15）。</div>
-    <span class="source-tag">豆包</span>
-  </div>
-
-  <div class="news-item">
-    <div class="date">2026-07</div>
-    <div class="title">Doubao-Seed-1.8 上线</div>
-    <div class="desc">豆包 1.8 版本模型上线，基础阶梯 0.8/8 元/百万 tokens，含特惠区（输出 ≤200 tokens 时仅 2 元/百万 tokens）。</div>
-    <span class="source-tag">豆包</span>
-  </div>
-
-  <div class="news-item">
-    <div class="date">持续</div>
-    <div class="title">AI 普惠季活动进行中</div>
-    <div class="desc">火山引擎 AI 普惠季持续推进，AI 统一节省计划可叠加使用，进一步降低模型调用成本。</div>
-    <span class="source-tag">豆包</span>
+  <h3 class="section-title">平台模型矩阵</h3>
+  <div class="card">
+    <table>
+      <thead>
+        <tr><th>平台</th><th>旗舰</th><th>Plus级</th><th>Flash级</th><th>代码</th><th>推理</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>百炼</strong></td>
+          <td>qwen3.8-max<br>qwen3.7-max<br>qwen3-max</td>
+          <td>qwen3.7-plus<br>qwen3.6-plus<br>qwen3.5-plus</td>
+          <td>qwen3.7-flash<br>qwen3.6-flash<br>qwen3.5-flash</td>
+          <td>qwen3-coder-plus<br>qwen3-coder-flash</td>
+          <td>qwq-plus<br>qvq-max</td>
+        </tr>
+        <tr>
+          <td><strong>豆包</strong></td>
+          <td>doubao-seed-evolving<br>doubao-seed-2.1-pro<br>doubao-seed-2.0-pro</td>
+          <td>doubao-seed-2.1-turbo<br>doubao-seed-2.0-lite</td>
+          <td>doubao-seed-1.6-flash<br>doubao-seed-2.0-mini</td>
+          <td>doubao-seed-2.0-code<br>doubao-seed-code</td>
+          <td>doubao-seed-evolving<br>(内置推理)</td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 </div>
+
+<!-- 最新动态 -->
+<div id="tab-news" class="tab-content">
+  <h3 class="section-title">百炼平台动态 (2026年7-8月)</h3>
+  <div class="news-item" style="border-left-color: #e67e22;">
+    <div class="news-date">2026-08-03</div>
+    <div class="news-title">qwen3.8-max 正式上线 <span class="tag-new">NEW</span></div>
+    <div class="news-desc">千问最新旗舰模型上线百炼，支持1M上下文，输入12元/百万Token，输出36元/百万Token，定价与qwen3.7-max持平。</div>
+  </div>
+  <div class="news-item" style="border-left-color: #e67e22;">
+    <div class="news-date">2026-07-21</div>
+    <div class="news-title">记忆库商业化通知</div>
+    <div class="news-desc">百炼记忆库功能正式进入商业化阶段，支持模型长期记忆管理。</div>
+  </div>
+  <div class="news-item" style="border-left-color: #e67e22;">
+    <div class="news-date">2026-07-16</div>
+    <div class="news-title">Managed Agent 商业化通知</div>
+    <div class="news-desc">百炼托管Agent服务正式商业化，支持独立沙箱运行环境。</div>
+  </div>
+  <div class="news-item" style="border-left-color: #e67e22;">
+    <div class="news-date">2026-07-15</div>
+    <div class="news-title">qwen3.7-flash 上线 <span class="tag-new">NEW</span></div>
+    <div class="news-desc">最新Flash级模型，输入仅0.2元/百万Token(0-32K)，输出0.8元/百万Token，极致性价比。</div>
+  </div>
+  <div class="news-item" style="border-left-color: #e67e22;">
+    <div class="news-date">2026-07-14</div>
+    <div class="news-title">GLM-5.2 Fast mode 降价</div>
+    <div class="news-desc">智谱GLM-5.2快速模式在百炼平台降价，进一步降低推理成本。</div>
+  </div>
+  <div class="news-item" style="border-left-color: #e67e22;">
+    <div class="news-date">2026-07-10</div>
+    <div class="news-title">部分老旧模型下线</div>
+    <div class="news-desc">百炼下线部分老旧长尾模型，推荐迁移至千问3系列。</div>
+  </div>
+
+  <h3 class="section-title">豆包平台动态 (2026年7-8月)</h3>
+  <div class="news-item">
+    <div class="news-date">2026-08-01</div>
+    <div class="news-title">doubao-seed-evolving 上线 <span class="tag-new">NEW</span></div>
+    <div class="news-desc">豆包最新进化模型上线火山方舟，入6元/出30元(0-256K)，是当前豆包最强模型。</div>
+  </div>
+  <div class="news-item">
+    <div class="news-date">2026-07</div>
+    <div class="news-title">doubao-seed-2.1-pro 正式发布</div>
+    <div class="news-desc">豆包Seed 2.1 Pro模型发布，Coding与Agent能力显著提升，入6元/出30元。</div>
+  </div>
+  <div class="news-item">
+    <div class="news-date">2026-07</div>
+    <div class="news-title">Seedance 2.5 视频模型上线 <span class="tag-new">NEW</span></div>
+    <div class="news-desc">新一代视频生成模型，支持480p/720p，按token计费，输入70元/百万token。</div>
+  </div>
+  <div class="news-item">
+    <div class="news-date">2026-07</div>
+    <div class="news-title">Coding Plan / Agent Plan 个人版上线</div>
+    <div class="news-desc">火山方舟推出订阅制套餐，Lite套餐40元/月，Pro套餐200元/月，降低开发者使用门槛。</div>
+  </div>
 </div>
 
-<!-- Tab 2: 价格结论 -->
-<div class="tab-content" id="tab2">
-<div class="section">
-  <h2>价格对比结论</h2>
+<!-- 价格结论 -->
+<div id="tab-conclusion" class="tab-content">
+  <h3 class="section-title">逐项对比结论</h3>
 
-  <div class="conclusion-item doubao">
-    <strong>豆包在旗舰模型价位更具竞争力：</strong>doubao-seed-evolving（6/30）相比 qwen3.7-max（12/36），输入价格低50%，输出低17%。但 qwen3.7-max 限时5折优惠后价格接近。
+  <div class="conclusion-item bailian-better">
+    <div><strong>Plus级模型</strong>：百炼 qwen3.7-plus (入2/出8) vs 豆包 doubao-seed-2.1-pro (入6/出30)<br><span class="pct-diff">百炼输入低67%，输出低73%，优势显著</span></div>
+    <span class="winner winner-bailian">百炼胜</span>
   </div>
-
-  <div class="conclusion-item bailian">
-    <strong>百炼在中端 Plus 级模型有明显价格优势：</strong>qwen3-plus 的输入价格（~0.83）仅为 doubao-seed-2.1-turbo（3.00）的 28%，输出也低约 67%。
+  <div class="conclusion-item bailian-better">
+    <div><strong>Plus级模型 (旧款)</strong>：百炼 qwen3.5-plus (入0.8/出4.8) vs 豆包 doubao-seed-2.0-lite (入0.6/出3.6)<br><span class="pct-diff">价格接近，百炼输出略贵但综合能力更强</span></div>
+    <span class="winner winner-tie">接近持平</span>
   </div>
-
-  <div class="conclusion-item bailian">
-    <strong>百炼标准级模型输出价极具优势：</strong>qwen-plus 输出仅 ~2.08 元/百万 tokens，是 doubao-seed-1.6（8 元）的 1/4。
+  <div class="conclusion-item doubao-better">
+    <div><strong>旗舰模型</strong>：百炼 qwen3.8-max (入12/出36) vs 豆包 doubao-seed-evolving (入6/出30)<br><span class="pct-diff">豆包输入低50%，输出低17%</span></div>
+    <span class="winner winner-doubao">豆包胜</span>
   </div>
-
-  <div class="conclusion-item doubao">
-    <strong>豆包 Flash 级模型输入价更低：</strong>doubao-seed-1.6-flash 输入仅 0.15 元/百万 tokens，比 qwen-turbo（~0.32）低53%，但输出价偏高。
+  <div class="conclusion-item bailian-better">
+    <div><strong>Flash级模型</strong>：百炼 qwen3.7-flash (入0.2/出0.8) vs 豆包 doubao-seed-1.6-flash (入0.15/出1.5)<br><span class="pct-diff">百炼输出低47%，综合更优</span></div>
+    <span class="winner winner-bailian">百炼胜</span>
   </div>
-
-  <div class="conclusion-item doubao">
-    <strong>DeepSeek 系列豆包略优：</strong>两平台 DeepSeek 定价接近，豆包以人民币直接定价，普遍比百炼（USD 折算）低 3-5%，差异较小。
+  <div class="conclusion-item bailian-better">
+    <div><strong>轻量模型</strong>：百炼 qwen-turbo (入0.3/出0.6) vs 豆包 doubao-seed-2.0-mini (入0.2/出2)<br><span class="pct-diff">百炼输出低70%，适合高频输出场景</span></div>
+    <span class="winner winner-bailian">百炼胜</span>
   </div>
-
-  <div class="conclusion-item doubao">
-    <strong>代码模型豆包大幅领先：</strong>doubao-seed-2.0-code（3.2/16）比百炼的 kimi-k2.7-code（~6.5/~27）便宜约 50%。
+  <div class="conclusion-item doubao-better">
+    <div><strong>代码模型</strong>：百炼 qwen3-coder-plus (入4/出16) vs 豆包 doubao-seed-code (入1.2/出8)<br><span class="pct-diff">豆包输入低70%，输出低50%</span></div>
+    <span class="winner winner-doubao">豆包胜</span>
   </div>
-
-  <div class="conclusion-item bailian">
-    <strong>百炼第三方模型 Kimi 系列有价格优势：</strong>kimi-k2.5（~4.2/~21.8）比 doubao-seed-evolving（6/30）便宜约 30%。
+  <div class="conclusion-item doubao-better">
+    <div><strong>代码模型 (Flash)</strong>：百炼 qwen3-coder-flash (入1/出4) vs 豆包 doubao-seed-2.0-code (入3.2/出16)<br><span class="pct-diff">百炼更优，输入低69%，输出低75%</span></div>
+    <span class="winner winner-bailian">百炼胜</span>
   </div>
-
+  <div class="conclusion-item bailian-better">
+    <div><strong>推理模型 (QwQ)</strong>：百炼 qwq-plus (入1.6/出4) vs 豆包无独立推理模型</div>
+    <span class="winner winner-bailian">百炼独有</span>
+  </div>
   <div class="conclusion-item tie">
-    <strong>DeepSeek-V4-Pro 两平台价格基本一致：</strong>均在 12/24 元/百万 tokens 左右，差异不足 1%。
+    <div><strong>DeepSeek-R1</strong>：百炼 (入4/出16) vs 豆包 (入4/出16)</div>
+    <span class="winner winner-tie">持平</span>
+  </div>
+  <div class="conclusion-item tie">
+    <div><strong>DeepSeek-V4-Pro</strong>：百炼 (入12/出24) vs 豆包 (入12/出24)</div>
+    <span class="winner winner-tie">持平</span>
+  </div>
+  <div class="conclusion-item tie">
+    <div><strong>DeepSeek-V3.2</strong>：百炼 (入2/出3) vs 豆包 (入2/出3，0-32K)</div>
+    <span class="winner winner-tie">持平</span>
+  </div>
+  <div class="conclusion-item bailian-better">
+    <div><strong>长文档模型</strong>：百炼 qwen-long (入0.5/出2) vs 豆包无对应模型</div>
+    <span class="winner winner-bailian">百炼独有</span>
+  </div>
+  <div class="conclusion-item bailian-better">
+    <div><strong>第三方 Kimi</strong>：百炼 kimi-k2.5 (入4/出21) vs 豆包不提供</div>
+    <span class="winner winner-bailian">百炼独有</span>
+  </div>
+  <div class="conclusion-item bailian-better">
+    <div><strong>第三方 GLM-5.2</strong>：百炼 (入8/出28) vs 豆包 (入8/出28)</div>
+    <span class="winner winner-tie">持平</span>
+  </div>
+  <div class="conclusion-item bailian-better">
+    <div><strong>视频生成 (720P)</strong>：百炼 HappyHorse (0.54元/秒 折后) vs 豆包 Seedance-2.0 (~0.99元/秒)</div>
+    <span class="winner winner-bailian">百炼胜</span>
+  </div>
+  <div class="conclusion-item bailian-better">
+    <div><strong>图像生成</strong>：百炼 qwen-image-2.0 (0.2元/张) vs 豆包 Seedream-4.0 (0.2元/张)</div>
+    <span class="winner winner-tie">持平</span>
   </div>
 
-  <h3 style="margin-top:24px">综合建议</h3>
-  <p style="font-size:0.92rem;line-height:1.7">
-    追求极致性价比的<strong>轻量级/Flash 场景</strong>，豆包 doubao-seed-1.6-flash（输入 0.15）是最低选择；<strong>中端通用场景</strong>，百炼 qwen-plus/qwen3-plus 输出价极低更具优势；<strong>旗舰级场景</strong>豆包 doubao-seed-evolving 综合更优但百炼 qwen3.7-max 限时5折后接近；<strong>DeepSeek 系列</strong>两平台差异极小可按平台便利性选择。
-  </p>
-</div>
-</div>
-
-<!-- Tab 3: 文本模型 -->
-<div class="tab-content" id="tab3">
-<div class="section">
-  <h2>百炼文本模型定价明细</h2>
-  <p class="note" style="margin-bottom:12px">数据来源：阿里云百炼官方定价页 | 单位：元/百万Tokens | USD价格按 1 USD = 7.25 CNY 折算</p>
-
-  <h3>Qwen Max 系列</h3>
-  <table>
-    <thead><tr><th>模型</th><th>条件</th><th>输入</th><th>输出</th><th>备注</th></tr></thead>
-    <tbody>
-      <tr><td><strong>qwen3.7-max</strong></td><td>≤1M</td><td>12.00</td><td>36.00</td><td>限时5折</td></tr>
-      <tr><td>qwen3.6-max-preview</td><td>≤128K</td><td>9.00</td><td>54.00</td><td></td></tr>
-      <tr><td>qwen3.6-max-preview</td><td>128-256K</td><td>15.00</td><td>90.00</td><td></td></tr>
-      <tr><td>qwen3-max</td><td>≤32K</td><td>2.50</td><td>10.00</td><td>支持Batch/缓存</td></tr>
-      <tr><td>qwen3-max</td><td>32-128K</td><td>4.00</td><td>16.00</td><td></td></tr>
-      <tr><td>qwen3-max</td><td>128-256K</td><td>7.00</td><td>28.00</td><td></td></tr>
-      <tr><td>qwen3-max-2025-09-23</td><td>≤32K</td><td>6.00</td><td>24.00</td><td></td></tr>
-      <tr><td>qwen-max (旧版)</td><td>-</td><td>2.40</td><td>9.60</td><td>非思考模式</td></tr>
-    </tbody>
-  </table>
-
-  <h3>Qwen Plus / Turbo / Long 系列</h3>
-  <table>
-    <thead><tr><th>模型</th><th>输入(CNY)</th><th>输出(CNY)</th><th>来源</th></tr></thead>
-    <tbody>
-      <tr><td><strong>qwen3.7-plus</strong></td><td>~0.83</td><td>~5.00</td><td>国际站 $0.276/$1.101 折算</td></tr>
-      <tr><td>qwen3.6-plus</td><td>~0.83</td><td>~8.00</td><td>国际站 $0.276/$1.651 折算</td></tr>
-      <tr><td>qwen3.5-plus</td><td>~0.83</td><td>~5.00</td><td>国际站 $0.115/$0.688 折算</td></tr>
-      <tr><td>qwen-plus</td><td>~0.83</td><td>~2.08</td><td>国际站 $0.115/$0.287 折算</td></tr>
-      <tr><td>qwen-turbo</td><td>~0.32</td><td>~0.63</td><td>国际站 $0.044/$0.087 折算</td></tr>
-    </tbody>
-  </table>
-
-  <h3>第三方模型（百炼托管）</h3>
-  <table>
-    <thead><tr><th>模型</th><th>输入(CNY)</th><th>输出(CNY)</th><th>来源</th></tr></thead>
-    <tbody>
-      <tr><td>deepseek-v4-pro</td><td>~11.96</td><td>~23.93</td><td>$1.65/$3.301</td></tr>
-      <tr><td>deepseek-v3.2</td><td>~2.08</td><td>~3.12</td><td>$0.287/$0.431</td></tr>
-      <tr><td>deepseek-v3</td><td>~2.08</td><td>~8.31</td><td>$0.287/$1.147</td></tr>
-      <tr><td>deepseek-r1</td><td>~4.16</td><td>~16.63</td><td>$0.574/$2.294</td></tr>
-      <tr><td>kimi-k2.7-code</td><td>~6.48</td><td>~26.92</td><td>$0.894/$3.713</td></tr>
-      <tr><td>kimi-k2.5</td><td>~4.16</td><td>~21.83</td><td>$0.574/$3.011</td></tr>
-      <tr><td>kimi-k2-thinking</td><td>~4.16</td><td>~16.63</td><td>$0.574/$2.294</td></tr>
-      <tr><td>glm-5.2</td><td>~7.98</td><td>~27.92</td><td>$1.100/$3.851</td></tr>
-      <tr><td>glm-5.1</td><td>~5.98</td><td>~23.93</td><td>$0.825/$3.301</td></tr>
-      <tr><td>glm-5</td><td>~4.15</td><td>~18.71</td><td>$0.573/$2.580</td></tr>
-      <tr><td>glm-4.7 / 4.6</td><td>~3.12</td><td>~14.55</td><td>$0.431/$2.007</td></tr>
-      <tr><td>MiniMax-M2.5</td><td>~2.20</td><td>~8.79</td><td>$0.304/$1.213</td></tr>
-    </tbody>
-  </table>
+  <h3 class="section-title" style="margin-top: 28px;">综合结论</h3>
+  <div class="card">
+    <p style="font-size: 0.95rem; line-height: 1.8;">
+      <strong>百炼优势领域：</strong>Plus级模型（qwen3.7-plus性价比极高）、Flash级模型（qwen3.7-flash输出价仅0.8元/百万Token）、长文档处理（qwen-long）、推理模型（qwq-plus）、视频生成（HappyHorse折后价优势明显）、第三方模型生态丰富（Kimi、GLM、MiniMax、MiMo等均可通过百炼调用）。
+    </p>
+    <p style="font-size: 0.95rem; line-height: 1.8; margin-top: 10px;">
+      <strong>豆包优势领域：</strong>旗舰模型（doubao-seed-evolving输入价低于百炼旗舰50%）、代码模型（doubao-seed-code价格极具竞争力）、批量推理半价优惠覆盖更广。
+    </p>
+    <p style="font-size: 0.95rem; line-height: 1.8; margin-top: 10px;">
+      <strong>持平领域：</strong>DeepSeek系列（R1、V4-Pro、V4-Flash、V3.2）两平台价格完全一致。GLM-5.2两平台定价相同。图像生成基础价格持平。
+    </p>
+  </div>
 </div>
 
-<div class="section">
-  <h2>豆包文本模型定价明细</h2>
-  <p class="note" style="margin-bottom:12px">数据来源：火山方舟官方定价页（2026-07-27 更新）| 单位：元/百万Tokens | 在线推理（常规）</p>
+<!-- 文本模型 -->
+<div id="tab-text" class="tab-content">
+  <h3 class="section-title">百炼 - 千问系列文本模型</h3>
+  <div class="card">
+    <table>
+      <thead>
+        <tr><th>模型</th><th>输入区间</th><th>输入(元/百万Token)</th><th>输出(元/百万Token)</th><th>备注</th></tr>
+      </thead>
+      <tbody>
+        <tr style="background:#fff8f0;"><td><strong>qwen3.8-max</strong> <span class="tag-new">NEW</span></td><td>0-1M</td><td>12</td><td>36</td><td>最新旗舰</td></tr>
+        <tr><td>qwen3.7-max</td><td>0-1M</td><td>12 <span class="tag-discount">5折</span></td><td>36 <span class="tag-discount">5折</span></td><td>限时优惠</td></tr>
+        <tr><td>qwen3.6-max-preview</td><td>0-128K / 128K-256K</td><td>9 / 15</td><td>54 / 90</td><td>-</td></tr>
+        <tr><td>qwen3-max</td><td>0-32K / 32K-128K</td><td>2.5 / 4</td><td>10 / 16</td><td>-</td></tr>
+        <tr><td>qwen-max</td><td>无阶梯</td><td>2.4</td><td>9.6</td><td>旧款</td></tr>
+        <tr style="background:#fff8f0;"><td><strong>qwen3.7-plus</strong> <span class="tag-hot">HOT</span></td><td>0-256K / 256K-1M</td><td>2 <span class="tag-discount">8折</span> / 6 <span class="tag-discount">8折</span></td><td>8 <span class="tag-discount">8折</span> / 24 <span class="tag-discount">8折</span></td><td>性价比之王</td></tr>
+        <tr><td>qwen3.6-plus</td><td>0-256K / 256K-1M</td><td>2 / 8</td><td>12 / 48</td><td>-</td></tr>
+        <tr><td>qwen3.5-plus</td><td>0-128K / 128K-256K</td><td>0.8 / 2</td><td>4.8 / 12</td><td>-</td></tr>
+        <tr><td>qwen-plus</td><td>0-128K / 128K-256K</td><td>0.8 / 2.4</td><td>2(非思考) / 20</td><td>-</td></tr>
+        <tr style="background:#fff8f0;"><td><strong>qwen3.7-flash</strong> <span class="tag-new">NEW</span></td><td>0-32K / 32K-256K</td><td>0.2 / 0.6</td><td>0.8 / 2.4</td><td>极致低价</td></tr>
+        <tr><td>qwen3.6-flash</td><td>0-256K / 256K-1M</td><td>1.2 / 4.8</td><td>7.2 / 28.8</td><td>-</td></tr>
+        <tr><td>qwen3.5-flash</td><td>0-128K / 128K-256K</td><td>0.2 / 0.8</td><td>2 / 8</td><td>-</td></tr>
+        <tr><td>qwen-flash</td><td>0-128K / 128K-256K</td><td>0.15 / 0.6</td><td>1.5 / 6</td><td>-</td></tr>
+        <tr><td>qwen-turbo</td><td>无阶梯</td><td>0.3</td><td>0.6(非思考) / 3(思考)</td><td>-</td></tr>
+        <tr><td>qwq-plus</td><td>无阶梯</td><td>1.6</td><td>4</td><td>推理模型</td></tr>
+        <tr><td>qwen-long</td><td>无阶梯</td><td>0.5</td><td>2</td><td>长文档</td></tr>
+      </tbody>
+    </table>
+  </div>
 
-  <h3>Doubao-Seed 系列（旗舰）</h3>
-  <table>
-    <thead><tr><th>模型</th><th>条件</th><th>输入</th><th>输出</th><th>备注</th></tr></thead>
-    <tbody>
-      <tr><td><strong>doubao-seed-evolving</strong> <span class="tag-new">NEW</span></td><td>[0, 1024K]</td><td>6.00</td><td>30.00</td><td>最新旗舰</td></tr>
-      <tr><td>doubao-seed-2.1-pro</td><td>[0, 256K]</td><td>6.00</td><td>30.00</td><td></td></tr>
-      <tr><td>doubao-seed-2.1-turbo</td><td>[0, 256K]</td><td>3.00</td><td>15.00</td><td></td></tr>
-      <tr><td>doubao-seed-2.0-pro</td><td>[0, 32K]</td><td>3.20</td><td>16.00</td><td></td></tr>
-      <tr><td>doubao-seed-2.0-pro</td><td>(32, 128K]</td><td>4.80</td><td>24.00</td><td></td></tr>
-      <tr><td>doubao-seed-2.0-pro</td><td>(128, 256K]</td><td>9.60</td><td>48.00</td><td></td></tr>
-      <tr><td>doubao-seed-2.0-lite</td><td>[0, 32K]</td><td>0.60</td><td>3.60</td><td></td></tr>
-      <tr><td>doubao-seed-2.0-lite</td><td>(32, 128K]</td><td>0.90</td><td>5.40</td><td></td></tr>
-      <tr><td>doubao-seed-2.0-mini</td><td>[0, 32K]</td><td>0.20</td><td>2.00</td><td></td></tr>
-      <tr><td>doubao-seed-2.0-mini</td><td>(32, 128K]</td><td>0.40</td><td>4.00</td><td></td></tr>
-      <tr><td>doubao-seed-2.0-code</td><td>[0, 32K]</td><td>3.20</td><td>16.00</td><td>代码模型</td></tr>
-      <tr><td>doubao-seed-2.0-code</td><td>(32, 128K]</td><td>4.80</td><td>24.00</td><td></td></tr>
-    </tbody>
-  </table>
+  <h3 class="section-title">百炼 - 代码模型</h3>
+  <div class="card">
+    <table>
+      <thead>
+        <tr><th>模型</th><th>输入区间</th><th>输入(元/百万Token)</th><th>输出(元/百万Token)</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>qwen3-coder-plus</td><td>0-32K / 32K-128K / 128K-256K</td><td>4 / 6 / 10</td><td>16 / 24 / 40</td></tr>
+        <tr><td>qwen3-coder-flash</td><td>0-32K / 32K-128K / 128K-256K</td><td>1 / 1.5 / 2.5</td><td>4 / 6 / 10</td></tr>
+      </tbody>
+    </table>
+  </div>
 
-  <h3>Doubao-Seed 1.x 系列</h3>
-  <table>
-    <thead><tr><th>模型</th><th>条件</th><th>输入</th><th>输出</th><th>备注</th></tr></thead>
-    <tbody>
-      <tr><td><strong>doubao-seed-1.8</strong></td><td>[0,32K] 输出≤200</td><td>0.80</td><td>2.00</td><td>特惠区</td></tr>
-      <tr><td>doubao-seed-1.8</td><td>[0,32K] 输出>200</td><td>0.80</td><td>8.00</td><td></td></tr>
-      <tr><td>doubao-seed-1.8</td><td>(32, 128K]</td><td>1.20</td><td>16.00</td><td></td></tr>
-      <tr><td>doubao-seed-1.6</td><td>[0,32K] 输出≤200</td><td>0.80</td><td>2.00</td><td>特惠区</td></tr>
-      <tr><td>doubao-seed-1.6</td><td>[0,32K] 输出>200</td><td>0.80</td><td>8.00</td><td></td></tr>
-      <tr><td>doubao-seed-1.6-lite</td><td>[0,32K] 输出≤200</td><td>0.30</td><td>0.60</td><td>特惠区</td></tr>
-      <tr><td>doubao-seed-1.6-lite</td><td>[0,32K] 输出>200</td><td>0.30</td><td>2.40</td><td></td></tr>
-      <tr><td><strong>doubao-seed-1.6-flash</strong></td><td>[0, 32K]</td><td>0.15</td><td>1.50</td><td>超低价</td></tr>
-      <tr><td>doubao-seed-1.6-flash</td><td>(32, 128K]</td><td>0.30</td><td>3.00</td><td></td></tr>
-      <tr><td>doubao-seed-character</td><td>[0, 32K]</td><td>0.80</td><td>2.00</td><td>角色扮演</td></tr>
-      <tr><td>doubao-seed-code</td><td>[0, 32K]</td><td>1.20</td><td>8.00</td><td>代码模型</td></tr>
-      <tr><td>doubao-seed-code</td><td>(32, 128K]</td><td>1.40</td><td>12.00</td><td></td></tr>
-    </tbody>
-  </table>
+  <h3 class="section-title">百炼 - 第三方模型</h3>
+  <div class="card">
+    <table>
+      <thead>
+        <tr><th>模型</th><th>输入(元/百万Token)</th><th>输出(元/百万Token)</th><th>备注</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>deepseek-v4-pro</td><td>12</td><td>24</td><td>支持缓存</td></tr>
+        <tr><td>deepseek-v4-flash</td><td>1</td><td>2</td><td>支持缓存</td></tr>
+        <tr><td>deepseek-v3.2</td><td>2</td><td>3</td><td>支持缓存</td></tr>
+        <tr><td>deepseek-v3.1</td><td>4</td><td>12</td><td>-</td></tr>
+        <tr><td>deepseek-r1</td><td>4</td><td>16</td><td>Batch半价</td></tr>
+        <tr><td>deepseek-v3</td><td>2</td><td>8</td><td>Batch半价</td></tr>
+        <tr><td>kimi-k2.7-code</td><td>6.5</td><td>27</td><td>代码推理</td></tr>
+        <tr><td>kimi-k2.6</td><td>6.5</td><td>27</td><td>-</td></tr>
+        <tr><td>kimi-k2.5</td><td>4</td><td>21</td><td>-</td></tr>
+        <tr><td>glm-5.2</td><td>8</td><td>28</td><td>无阶梯</td></tr>
+        <tr><td>glm-5.1</td><td>6 (0-32K)</td><td>24</td><td>-</td></tr>
+        <tr><td>MiniMax-M2.5</td><td>2.1</td><td>8.4</td><td>思考模式</td></tr>
+        <tr><td>xiaomi/mimo-v2.5-pro</td><td>7 (0-256K)</td><td>21</td><td>-</td></tr>
+        <tr><td>stepfun/step-3.7-flash</td><td>1.35</td><td>8.1</td><td>-</td></tr>
+      </tbody>
+    </table>
+  </div>
 
-  <h3>Doubao 1.5 系列 & 第三方模型</h3>
-  <table>
-    <thead><tr><th>模型</th><th>条件</th><th>输入</th><th>输出</th><th>备注</th></tr></thead>
-    <tbody>
-      <tr><td>doubao-1.5-pro-32k</td><td>-</td><td>0.80</td><td>2.00</td><td></td></tr>
-      <tr><td>doubao-1.5-lite-32k</td><td>-</td><td>0.30</td><td>0.60</td><td></td></tr>
-      <tr><td>glm-5.2</td><td>-</td><td>8.00</td><td>28.00</td><td></td></tr>
-      <tr><td>glm-4.7</td><td>[0,32K] 输出≤200</td><td>2.00</td><td>8.00</td><td></td></tr>
-      <tr><td>glm-4.7</td><td>[0,32K] 输出>200</td><td>3.00</td><td>14.00</td><td></td></tr>
-      <tr><td>deepseek-v4-pro</td><td>-</td><td>12.00</td><td>24.00</td><td></td></tr>
-      <tr><td>deepseek-v4-flash</td><td>-</td><td>1.00</td><td>2.00</td><td></td></tr>
-      <tr><td>deepseek-v3.2</td><td>[0, 32K]</td><td>2.00</td><td>3.00</td><td></td></tr>
-      <tr><td>deepseek-v3.2</td><td>(32, 128K]</td><td>4.00</td><td>6.00</td><td></td></tr>
-      <tr><td>deepseek-v3.1</td><td>-</td><td>4.00</td><td>12.00</td><td></td></tr>
-      <tr><td>deepseek-v3</td><td>-</td><td>2.00</td><td>8.00</td><td></td></tr>
-      <tr><td>deepseek-r1</td><td>-</td><td>4.00</td><td>16.00</td><td></td></tr>
-    </tbody>
-  </table>
-</div>
-</div>
+  <h3 class="section-title">豆包 - 全量文本模型</h3>
+  <div class="card">
+    <table>
+      <thead>
+        <tr><th>模型</th><th>输入区间</th><th>输入(元/百万Token)</th><th>输出(元/百万Token)</th><th>备注</th></tr>
+      </thead>
+      <tbody>
+        <tr style="background:#eaf2f8;"><td><strong>doubao-seed-evolving</strong> <span class="tag-new">NEW</span></td><td>[0,256]</td><td>6</td><td>30</td><td>最新旗舰</td></tr>
+        <tr><td>doubao-seed-2.1-pro</td><td>[0,256]</td><td>6</td><td>30</td><td>Pro级</td></tr>
+        <tr><td>doubao-seed-2.1-turbo</td><td>[0,256]</td><td>3</td><td>15</td><td>Turbo级</td></tr>
+        <tr><td>doubao-seed-2.0-pro</td><td>[0,32] / (32,128] / (128,256]</td><td>3.2 / 4.8 / 9.6</td><td>16 / 24 / 48</td><td>阶梯计费</td></tr>
+        <tr><td>doubao-seed-2.0-lite</td><td>[0,32] / (32,128] / (128,256]</td><td>0.6 / 0.9 / 1.8</td><td>3.6 / 5.4 / 10.8</td><td>含音频输入</td></tr>
+        <tr><td>doubao-seed-2.0-mini</td><td>[0,32] / (32,128] / (128,256]</td><td>0.2 / 0.4 / 0.8</td><td>2 / 4 / 8</td><td>轻量模型</td></tr>
+        <tr><td>doubao-seed-2.0-code</td><td>[0,32] / (32,128] / (128,256]</td><td>3.2 / 4.8 / 9.6</td><td>16 / 24 / 48</td><td>代码模型</td></tr>
+        <tr><td>doubao-seed-code</td><td>[0,32] / (32,128] / (128,256]</td><td>1.2 / 1.4 / 2.8</td><td>8 / 12 / 16</td><td>代码模型</td></tr>
+        <tr><td>doubao-seed-1.8</td><td>[0,32]输出≤0.2K / [0,32] / (32,128] / (128,256]</td><td>0.8 / 0.8 / 1.2 / 2.4</td><td>2 / 8 / 16 / 24</td><td>-</td></tr>
+        <tr><td>doubao-seed-1.6</td><td>[0,32]输出≤0.2K / [0,32] / (32,128] / (128,256]</td><td>0.8 / 0.8 / 1.2 / 2.4</td><td>2 / 8 / 16 / 24</td><td>-</td></tr>
+        <tr><td>doubao-seed-1.6-lite</td><td>[0,32]输出≤0.2K / [0,32] / (32,128] / (128,256]</td><td>0.3 / 0.3 / 0.6 / 1.2</td><td>0.6 / 2.4 / 4 / 12</td><td>轻量版</td></tr>
+        <tr><td>doubao-seed-1.6-flash</td><td>[0,32] / (32,128] / (128,256]</td><td>0.15 / 0.3 / 0.6</td><td>1.5 / 3 / 6</td><td>Flash级</td></tr>
+        <tr><td>doubao-seed-1.6-vision</td><td>[0,32] / (32,128] / (128,256]</td><td>0.8 / 1.2 / 2.4</td><td>8 / 16 / 24</td><td>视觉模型</td></tr>
+        <tr><td>doubao-seed-character</td><td>[0,32] / (32,128]</td><td>0.8 / 1.2</td><td>2 / 6</td><td>角色扮演</td></tr>
+        <tr><td>doubao-seed-translation-1.2</td><td>-</td><td>-</td><td>3.6</td><td>翻译模型</td></tr>
+        <tr><td>doubao-1.5-pro-32k</td><td>-</td><td>0.8</td><td>2</td><td>旧款Pro</td></tr>
+        <tr><td>doubao-1.5-lite-32k</td><td>-</td><td>0.3</td><td>0.6</td><td>旧款Lite</td></tr>
+        <tr><td>doubao-1.5-vision-pro</td><td>-</td><td>3</td><td>9</td><td>视觉Pro</td></tr>
+      </tbody>
+    </table>
+  </div>
 
-<!-- Tab 4: 非文本模型 -->
-<div class="tab-content" id="tab4">
-<div class="section">
-  <h2>豆包视频生成模型</h2>
-  <p class="note" style="margin-bottom:12px">单位：元/百万Tokens（视频价格由 token 单价 × token 用量决定）</p>
-  <table>
-    <thead><tr><th>模型</th><th>条件</th><th>输入价格</th><th>输出价格</th></tr></thead>
-    <tbody>
-      <tr><td>doubao-seedance-2.0</td><td>480p/720p, 不含视频</td><td colspan="2">46.00</td></tr>
-      <tr><td>doubao-seedance-2.0</td><td>480p/720p, 含视频</td><td>28.00</td><td>-</td></tr>
-      <tr><td>doubao-seedance-2.0</td><td>1080p, 不含视频</td><td colspan="2">51.00</td></tr>
-      <tr><td>doubao-seedance-2.0</td><td>4K, 不含视频</td><td colspan="2">26.00</td></tr>
-      <tr><td>doubao-seedance-2.0-fast</td><td>不含视频</td><td colspan="2">37.00</td></tr>
-      <tr><td>doubao-seedance-2.0-fast</td><td>含视频</td><td>22.00</td><td>-</td></tr>
-      <tr><td>doubao-seedance-2.0-mini</td><td>不含视频</td><td colspan="2">23.00</td></tr>
-      <tr><td>doubao-seedance-2.0-mini</td><td>含视频</td><td>14.00</td><td>-</td></tr>
-      <tr><td>doubao-seedance-1.5-pro</td><td>有声视频</td><td colspan="2">16.00</td></tr>
-      <tr><td>doubao-seedance-1.5-pro</td><td>无声视频</td><td colspan="2">8.00</td></tr>
-    </tbody>
-  </table>
-
-  <h3 style="margin-top:20px">视频价格示例（5秒视频，16:9）</h3>
-  <table>
-    <thead><tr><th>分辨率</th><th>Seedance 2.0</th><th>Seedance 2.0 Fast</th><th>Seedance 2.0 Mini</th></tr></thead>
-    <tbody>
-      <tr><td>480p</td><td>2.31 元/个</td><td>1.86 元/个</td><td>1.16 元/个</td></tr>
-      <tr><td>720p</td><td>4.97 元/个</td><td>4.00 元/个</td><td>2.48 元/个</td></tr>
-      <tr><td>1080p</td><td>12.39 元/个</td><td>不支持</td><td>不支持</td></tr>
-    </tbody>
-  </table>
-</div>
-
-<div class="section">
-  <h2>豆包图片生成模型</h2>
-  <table>
-    <thead><tr><th>模型</th><th>输入图(元/张)</th><th>输出图(元/张)</th></tr></thead>
-    <tbody>
-      <tr><td>doubao-seedream-5-0-pro</td><td>首张免费, 第2张起 0.02</td><td>≤236万像素: 0.30 / >236万: 0.60</td></tr>
-      <tr><td>doubao-seedream-5-0-lite</td><td>免费</td><td>0.22</td></tr>
-      <tr><td>doubao-seedream-4-5</td><td>免费</td><td>0.25</td></tr>
-      <tr><td>doubao-seedream-4-0</td><td>免费</td><td>0.20</td></tr>
-    </tbody>
-  </table>
-</div>
-
-<div class="section">
-  <h2>百炼视觉模型参考</h2>
-  <p class="note">百炼 VL 系列近期宣布降价，具体价格请参考百炼官方定价页最新公告。qwen-vl-max、qwen-vl-plus 等模型均有降价。</p>
-  <p style="font-size:0.88rem;padding:12px 0">
-    <a href="https://help.aliyun.com/zh/model-studio/model-pricing" target="_blank" style="color:#e65100">→ 查看百炼完整定价页</a>
-    &nbsp;&nbsp;
-    <a href="https://www.volcengine.com/docs/82379/1544106" target="_blank" style="color:#1565c0">→ 查看豆包完整定价页</a>
-  </p>
-</div>
+  <h3 class="section-title">豆包 - 第三方模型</h3>
+  <div class="card">
+    <table>
+      <thead>
+        <tr><th>模型</th><th>输入区间</th><th>输入(元/百万Token)</th><th>输出(元/百万Token)</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>glm-5.2</td><td>-</td><td>8</td><td>28</td></tr>
+        <tr><td>glm-4.7</td><td>[0,32]输出≤0.2K / [0,32] / (32,200]</td><td>2 / 3 / 4</td><td>8 / 14 / 16</td></tr>
+        <tr><td>deepseek-v4-pro</td><td>-</td><td>12</td><td>24</td></tr>
+        <tr><td>deepseek-v4-flash</td><td>-</td><td>1</td><td>2</td></tr>
+        <tr><td>deepseek-v3.2</td><td>[0,32] / (32,128]</td><td>2 / 4</td><td>3 / 6</td></tr>
+        <tr><td>deepseek-v3.1</td><td>-</td><td>4</td><td>12</td></tr>
+        <tr><td>deepseek-v3</td><td>-</td><td>2</td><td>8</td></tr>
+        <tr><td>deepseek-r1</td><td>-</td><td>4</td><td>16</td></tr>
+      </tbody>
+    </table>
+  </div>
 </div>
 
+<!-- 非文本模型 -->
+<div id="tab-non-text" class="tab-content">
+  <h3 class="section-title">百炼 - 图像生成</h3>
+  <div class="card">
+    <table>
+      <thead>
+        <tr><th>模型</th><th>输出单价</th><th>备注</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>qwen-image-3.0-pro</td><td>限时免费</td><td><span class="tag-hot">HOT</span></td></tr>
+        <tr><td>qwen-image-2.0-pro</td><td>0.5元/张</td><td>-</td></tr>
+        <tr><td>qwen-image-2.0</td><td>0.2元/张</td><td>-</td></tr>
+        <tr><td>wan2.6-t2i</td><td>0.2元/张</td><td>万相文生图</td></tr>
+        <tr><td>wanx2.1-t2i-plus</td><td>0.2元/张</td><td>-</td></tr>
+        <tr><td>wanx2.0-t2i-turbo</td><td>0.04元/张</td><td>低价款</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3 class="section-title">百炼 - 视频生成</h3>
+  <div class="card">
+    <table>
+      <thead>
+        <tr><th>模型</th><th>分辨率</th><th>输出单价</th><th>备注</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>happyhorse-1.1-t2v</td><td>480P / 720P / 1080P</td><td>0.27 / 0.54 / 0.72 元/秒 <span class="tag-discount">6折</span></td><td>文生视频</td></tr>
+        <tr><td>wan2.7-t2v</td><td>720P / 1080P</td><td>0.6 / 1 元/秒</td><td>万相文生视频</td></tr>
+        <tr><td>wan2.6-i2v-flash (无声)</td><td>720P / 1080P</td><td>0.15 / 0.25 元/秒</td><td>图生视频</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3 class="section-title">百炼 - 语音合成 (TTS)</h3>
+  <div class="card">
+    <table>
+      <thead>
+        <tr><th>模型</th><th>输入单价</th><th>备注</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>qwen-audio-3.0-tts-plus</td><td>1.4元/万字符</td><td>-</td></tr>
+        <tr><td>qwen-audio-3.0-tts-flash</td><td>1元/万字符</td><td>-</td></tr>
+        <tr><td>qwen3-tts-flash</td><td>0.8元/万字符</td><td>-</td></tr>
+        <tr><td>cosyvoice-v3.5-flash</td><td>0.8元/万字符</td><td>-</td></tr>
+        <tr><td>cosyvoice-v3.5-plus</td><td>1.5元/万字符</td><td>-</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3 class="section-title">百炼 - 语音识别 (ASR)</h3>
+  <div class="card">
+    <table>
+      <thead>
+        <tr><th>模型</th><th>输入单价</th><th>备注</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>qwen-audio-3.0-asr-flash</td><td>0.00022元/秒</td><td>-</td></tr>
+        <tr><td>qwen3-asr-flash</td><td>0.00022元/秒</td><td>-</td></tr>
+        <tr><td>fun-asr</td><td>0.00022元/秒</td><td>-</td></tr>
+        <tr><td>paraformer-v2</td><td>0.00008元/秒</td><td>超低价</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3 class="section-title">豆包 - 视频生成</h3>
+  <div class="card">
+    <table>
+      <thead>
+        <tr><th>模型</th><th>分辨率</th><th>Token单价(元/百万)</th><th>参考价(元/秒)</th></tr>
+      </thead>
+      <tbody>
+        <tr style="background:#eaf2f8;"><td><strong>doubao-seedance-2.5</strong> <span class="tag-new">NEW</span></td><td>480p/720p</td><td>入70(无视频) / 42(含视频)</td><td>~0.67(720p)</td></tr>
+        <tr><td>doubao-seedance-2.0</td><td>480p/720p</td><td>入46(无视频) / 28(含视频)</td><td>~0.46-0.99</td></tr>
+        <tr><td>doubao-seedance-2.0-fast</td><td>480p/720p</td><td>入37 / 22</td><td>~0.37-0.80</td></tr>
+        <tr><td>doubao-seedance-2.0-mini</td><td>480p/720p</td><td>入23 / 14</td><td>~0.23-0.50</td></tr>
+        <tr><td>doubao-seedance-1.5-pro</td><td>480p/720p/1080p</td><td>有声16 / 无声8</td><td>0.40-1.94</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3 class="section-title">豆包 - 图像生成</h3>
+  <div class="card">
+    <table>
+      <thead>
+        <tr><th>模型</th><th>输入图单价</th><th>输出图单价</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>doubao-seedream-5-0-pro</td><td>首张免费，后续0.02元/张</td><td>≤261万像素: 0.30元 / >261万像素: 0.60元</td></tr>
+        <tr><td>doubao-seedream-5-0-lite</td><td>免费</td><td>0.22元/张</td></tr>
+        <tr><td>doubao-seedream-4-5</td><td>免费</td><td>0.25元/张</td></tr>
+        <tr><td>doubao-seedream-4-0</td><td>免费</td><td>0.20元/张</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3 class="section-title">豆包 - 3D生成</h3>
+  <div class="card">
+    <table>
+      <thead>
+        <tr><th>模型</th><th>产物类型</th><th>输出单价(元/次)</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>doubao-seed3d-2.0</td><td>带纹理+PBR材质</td><td>2.40</td></tr>
+        <tr><td>Hyper3d-Gen2</td><td>白模 / 带纹理 / PBR / 纹理+PBR</td><td>1.80 / - / - / 3.00</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3 class="section-title">向量模型对比</h3>
+  <div class="card">
+    <table>
+      <thead>
+        <tr><th>平台</th><th>模型</th><th>文本输入(元/百万Token)</th><th>图片输入(元/百万Token)</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>百炼</td><td>qwen3.7-text-embedding</td><td>0.5</td><td>-</td></tr>
+        <tr><td>百炼</td><td>text-embedding-v4</td><td>0.5</td><td>-</td></tr>
+        <tr><td>百炼</td><td>qwen3-vl-embedding</td><td>0.7</td><td>1.8</td></tr>
+        <tr><td>豆包</td><td>doubao-embedding-vision</td><td>0.7</td><td>1.8</td></tr>
+      </tbody>
+    </table>
+  </div>
 </div>
 
 <div class="footer">
   <p>数据来源：<a href="https://help.aliyun.com/zh/model-studio/model-pricing" target="_blank">阿里云百炼定价页</a> | <a href="https://www.volcengine.com/docs/82379/1544106" target="_blank">火山方舟定价页</a></p>
-  <p style="margin-top:6px">本报告仅供参考，实际价格以各平台官方定价页为准 | 百炼国际站USD价格按 1 USD ≈ 7.25 CNY 折算</p>
-  <p style="margin-top:6px">© 2026 LLM Price Daily | Auto-generated Report</p>
+  <p>本报告自动生成，仅供参考。实际价格以官方页面为准。</p>
+  <p>&copy; 2026 LLM Price Daily | Auto-updated by QoderWork</p>
 </div>
 
 <script>
-function switchTab(idx){
-  document.querySelectorAll('.tab-content').forEach((el,i)=>{
-    el.classList.toggle('active',i===idx);
-  });
-  document.querySelectorAll('.tabs button').forEach((btn,i)=>{
-    btn.classList.toggle('active',i===idx);
-  });
+function showTab(name) {
+  document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(el => el.classList.remove('active'));
+  document.getElementById('tab-' + name).classList.add('active');
+  event.target.classList.add('active');
 }
 </script>
 </body>
