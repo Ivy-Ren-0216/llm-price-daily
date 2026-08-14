@@ -116,9 +116,9 @@ th.plat-tencent { border-top: 3px solid var(--c-tencent); }
 
 <div class="tabs">
   <button class="tab-btn active" onclick="switchTab('overview')">总览</button>
-  <button class="tab-btn" onclick="switchTab('news')">最新动态</button>
-  <button class="tab-btn" onclick="switchTab('arena')">能力排名</button>
   <button class="tab-btn" onclick="switchTab('conclusion')">价格结论</button>
+  <button class="tab-btn" onclick="switchTab('arena')">能力排名</button>
+  <button class="tab-btn" onclick="switchTab('news')">最新动态</button>
   <button class="tab-btn" onclick="switchTab('flagship')">旗舰&主力对比</button>
   <button class="tab-btn" onclick="switchTab('alltext')">全平台文本模型</button>
   <button class="tab-btn" onclick="switchTab('nontext')">非文本模型</button>
@@ -313,69 +313,58 @@ th.plat-tencent { border-top: 3px solid var(--c-tencent); }
 </div>
 
 <!-- Tab 2: 最新动态 -->
-<div id="panel-news" class="tab-panel">
+<div id="panel-conclusion" class="tab-panel">
 
-<h2>最新动态</h2>
-<p class="note-text">按时间倒序排列，覆盖2026年5月至8月的主要模型发布与价格变动。</p>
+<h2>价格结论</h2>
 
-<h3><span class="plat-badge bailian">百炼</span></h3>
-<ul class="news-list">
-  <li class="news-item bailian"><div class="news-date">2026-08-13</div><div class="news-title">PixVerse V6-R2V-Omni 视频生成模型上线 <span class="tag-new">NEW</span></div><div class="news-desc">融合参考生视频模型，支持图片+视频混合参考输入，智能融合多主体，多分辨率输出。</div></li>
-  <li class="news-item bailian"><div class="news-date">2026-08-12</div><div class="news-title">Qwen3.8-2.4T-A95B 开源版上线 <span class="tag-new">NEW</span></div><div class="news-desc">通义千问最新旗舰系列开源版，稀疏MoE架构（总参2.4万亿，每步激活约950亿），支持100万Token上下文。</div></li>
-  <li class="news-item bailian"><div class="news-date">2026-08-06</div><div class="news-title">万相3.0 全能参考视频生成模型上线 <span class="tag-new">NEW</span></div><div class="news-desc">wan3.0-video，统一支持文生视频、图生视频和参考生视频，最长可生成30秒视频。按分辨率计费：480P 0.30元/秒，720P 0.60元/秒，1080P 1.20元/秒。</div></li>
-  <li class="news-item bailian"><div class="news-date">2026-08-04</div><div class="news-title">Qwen-Image-3.0 图片生成模型上线 <span class="tag-new">NEW</span></div><div class="news-desc">支持4.5k token输入及复杂版面生成，10px小字精准渲染，支持12国语言字体原生渲染。</div></li>
-  <li class="news-item bailian"><div class="news-date">2026-08-03</div><div class="news-title">Qwen3.8-Max 旗舰模型发布 <span class="tag-new">NEW</span></div><div class="news-desc">2.4万亿参数MoE架构，原生视觉语言，上下文128K（可扩展至100万）。输入12元/百万Token，输出36元/百万Token。推理效率提升30%，幻觉率降低62%。</div></li>
-  <li class="news-item bailian"><div class="news-date">2026-08-01</div><div class="news-title">DeepSeek-V4-Flash 上线百炼 <span class="tag-new">NEW</span></div><div class="news-desc">284B总参/13B激活的轻量化MoE，百万上下文，1/2元/百万Tokens。</div></li>
-  <li class="news-item bailian"><div class="news-date">2026-07-30</div><div class="news-title">Qwen-Audio-3.0-ASR-Flash 语音识别上线 <span class="tag-new">NEW</span></div><div class="news-desc">支持汉语七大方言及20+口音、30个语种，专项优化古诗词识别。</div></li>
-  <li class="news-item bailian"><div class="news-date">2026-07-21</div><div class="news-title">qwen3.7-flash 发布 <span class="tag-new">NEW</span></div><div class="news-desc">原生视觉语言Flash模型，0.2/0.8元/百万Tokens，强化万物识别与空间智能。</div></li>
-  <li class="news-item bailian"><div class="news-date">2026-07-15</div><div class="news-title">GLM-5.2 Fast mode 降价20% <span class="tag-discount">折扣</span></div><div class="news-desc">百炼平台GLM-5.2 Fast mode模式计费下调20%。</div></li>
-</ul>
+<div class="conclusion-box">
+<h4>旗舰对比</h4>
+<p>腾讯混元 Hy3 以 1/4 元/百万Tokens 的定价，在7大平台旗舰模型中价格最低（输入+输出合计5元）。MiniMax M3 (2.1/8.4) 次之。Kimi K3 (20/100) 定价最高，反映其2.8T参数的巨大模型规模。百度 ERNIE 5.1 (4/18) 输出价较低，综合性价比突出。</p>
+</div>
 
-<h3><span class="plat-badge doubao">豆包</span></h3>
-<ul class="news-list">
-  <li class="news-item doubao"><div class="news-date">2026-08-07</div><div class="news-title">Seedance 2.5 API 正式上线 <span class="tag-new">NEW</span></div><div class="news-desc">原生支持30秒视频直出，最高同步调用50个全模态参考素材。含视频输入42元/百万tokens，不含70元/百万tokens。</div></li>
-  <li class="news-item doubao"><div class="news-date">2026-08-07</div><div class="news-title">Seedance 2.0 限时折扣 <span class="tag-discount">折扣</span></div><div class="news-desc">Seedance 2.0 mini 4折计费，Seedance 2.0 fast 7.5折计费。</div></li>
-  <li class="news-item doubao"><div class="news-date">2026-06-23</div><div class="news-title">豆包 2.1 Pro 发布 <span class="tag-new">NEW</span></div><div class="news-desc">Coding/Agent/VLM三大升级，输入6元/百万Token，输出30元/百万Token，缓存命中1.2元。</div></li>
-  <li class="news-item doubao"><div class="news-date">2026-06</div><div class="news-title">Seed 2.1 Turbo 发布 <span class="tag-new">NEW</span></div><div class="news-desc">高性价比推理模型，3/15元/百万Tokens，缓存命中0.6元。</div></li>
-</ul>
+<div class="conclusion-box">
+<h4>中端主力 (Plus/Pro级)</h4>
+<p>百度 ERNIE 4.5 Turbo (0.8/3.2) 在 Plus/Pro 级别中价格最低，合计仅4元/百万Tokens，不到第二名的一半。百炼 qwen3.7-plus (2/8) 和智谱 GLM-4.7 (2/8) 持平，合计10元。豆包 seed-2.1-turbo (3/15) 合计18元，在同类中偏贵。</p>
+</div>
 
-<h3><span class="plat-badge zhipu">智谱</span></h3>
-<ul class="news-list">
-  <li class="news-item zhipu"><div class="news-date">2026-08-10</div><div class="news-title">GLM-5.2 上线并MIT开源 <span class="tag-new">NEW</span></div><div class="news-desc">旗舰编程模型，1M上下文，128K最大输出。输入8元/百万tokens，输出28元/百万tokens。</div></li>
-  <li class="news-item zhipu"><div class="news-date">2026-08</div><div class="news-title">Coding Plan 套餐结构性调价</div><div class="news-desc">整体涨幅30%起，月费118元起。海外版涨至18/72/160美元。</div></li>
-  <li class="news-item zhipu"><div class="news-date">2026-03</div><div class="news-title">GLM-5-Turbo API 价格上调20%</div><div class="news-desc">打响2026年国产大模型涨价第一枪，相对GLM-4.7累计涨幅约83%。</div></li>
-</ul>
+<div class="conclusion-box">
+<h4>低成本方案</h4>
+<p>Flash/Lite级别：百炼 qwen3.7-flash (0.2/0.8) 输出价最低，合计1元/百万Tokens。豆包 seed-2.0-mini (0.2/2) 输入价持平但输出较贵。<br>
+免费模型：智谱 GLM-4.7-Flash 和腾讯 hunyuan-lite 完全免费，适合预算敏感或试探性调用。</p>
+</div>
 
-<h3><span class="plat-badge kimi">Kimi</span></h3>
-<ul class="news-list">
-  <li class="news-item kimi"><div class="news-date">2026-08-04</div><div class="news-title">部分模型API将于8月31日下线</div><div class="news-desc">moonshot-v1系列及kimi-k2.5将于8月31日全平台下线，建议迁移至kimi-k3/k2.6/k2.7-code。</div></li>
-  <li class="news-item kimi"><div class="news-date">2026-07-29</div><div class="news-title">月之暗面完成超35亿美元F轮融资</div><div class="news-desc">估值超350亿美元，已完成股改转型为股份有限公司。</div></li>
-  <li class="news-item kimi"><div class="news-date">2026-07-17</div><div class="news-title">Kimi K3 正式发布 <span class="tag-new">NEW</span></div><div class="news-desc">2.8万亿参数旗舰，1M上下文，全球首个开源3T级模型。20/100元/百万Tokens。</div></li>
-</ul>
+<div class="conclusion-box info">
+<h4>DeepSeek 跨平台托管价</h4>
+<p>DeepSeek-V4-Pro 存在巨大价差：豆包/腾讯(官方直连) 仅 3/6 元，而百炼/百度/腾讯(转售) 高达 12/24 元 -- 价差达4倍！<br>
+DeepSeek-V4-Flash 全平台统一 1/2 元，无价差。<br>
+<strong>建议</strong>：使用DeepSeek-V4-Pro应优先选择豆包或腾讯官方直连，可节省75%成本。</p>
+</div>
 
-<h3><span class="plat-badge minimax">MiniMax</span></h3>
-<ul class="news-list">
-  <li class="news-item minimax"><div class="news-date">2026-07-31</div><div class="news-title">MiniMax H3 视频模型发布并开源 <span class="tag-new">NEW</span></div><div class="news-desc">全模态生成模型，输出原生双声道音视频，支持2K分辨率最长15秒，登顶全球视频模型榜首。</div></li>
-  <li class="news-item minimax"><div class="news-date">2026-06-01</div><div class="news-title">MiniMax M3 旗舰语言模型发布 <span class="tag-new">NEW</span></div><div class="news-desc">1M超长上下文，MSA稀疏注意力架构，原生多模态，前沿Coding和Agent能力。</div></li>
-  <li class="news-item minimax"><div class="news-date">2026-05</div><div class="news-title">MiniMax 启动A股上市辅导</div><div class="news-desc">成为国内大模型创业公司中较早推进IPO的企业之一。</div></li>
-</ul>
+<div class="conclusion-box info">
+<h4>第三方托管价格</h4>
+<p><strong>GLM-5.2</strong>：全平台统一 8/28 元，无价差。<br>
+<strong>Kimi K2.6</strong>：百度/腾讯/官方统一 6.5/27 元。<br>
+<strong>MiniMax M3</strong>：腾讯TokenHub (2.1/8.4) 与官方持平，百炼 (4.2/16.8) 贵1倍。<br>
+<strong>建议</strong>：MiniMax M3 应选择腾讯TokenHub或官方，避免在百炼以2倍价调用。</p>
+</div>
 
-<h3><span class="plat-badge baidu">百度千帆</span></h3>
-<ul class="news-list">
-  <li class="news-item baidu"><div class="news-date">2026-08</div><div class="news-title">ERNIE 5.0 Thinking Preview 上线 <span class="tag-new">NEW</span></div><div class="news-desc">ERNIE 5.0 Thinking Preview 模型已上线并公布定价。</div></li>
-  <li class="news-item baidu"><div class="news-date">2026-05</div><div class="news-title">Token福利包：月费800元锁定13亿tokens <span class="tag-discount">折扣</span></div><div class="news-desc">百度千帆推出Token福利包订阅方案。</div></li>
-</ul>
+<div class="conclusion-box warn">
+<h4>独家优势</h4>
+<p><strong>百炼</strong>：qwen-long 独占10M超长上下文（0.5/2元），无竞品。qwen3.7-flash 在Flash级输出价最低。<br>
+<strong>智谱</strong>：GLM-4.7-Flash 免费 + GLM-Z1-Air 推理模型仅0.5/0.5元。<br>
+<strong>腾讯</strong>：Hy3 旗舰价全平台最低(1/4)，hunyuan-lite 免费。<br>
+<strong>豆包</strong>：seed-2.0-code 编程模型最便宜(3.2/16)。<br>
+<strong>百度</strong>：ERNIE 4.5 Turbo 在Plus级最低(0.8/3.2)，且ERNIE 5.1输出价有竞争力。</p>
+</div>
 
-<h3><span class="plat-badge tencent">腾讯混元</span></h3>
-<ul class="news-list">
-  <li class="news-item tencent"><div class="news-date">2026-08-07</div><div class="news-title">MiniMax-M2.5 模型下线</div><div class="news-desc">自动升级至MiniMax-M3。</div></li>
-  <li class="news-item tencent"><div class="news-date">2026-07-06</div><div class="news-title">Hy3 正式发布 <span class="tag-new">NEW</span></div><div class="news-desc">MoE架构(295B总参/21B激活)，256K上下文，输入1元/输出4元/百万tokens，缓存0.25元。快慢思考融合。</div></li>
-  <li class="news-item tencent"><div class="news-date">2026-04</div><div class="news-title">平台从"混元"迁移至"TokenHub"</div><div class="news-desc">支持DeepSeek、GLM、Kimi、MiniMax、Qwen等第三方模型统一API入口。</div></li>
-</ul>
+<h3>综合总结</h3>
+<p style="font-size:0.92rem; line-height:1.8; padding:0.8rem; background:#f8fafc; border-radius:8px;">
+在7大平台的横向对比中，<strong>腾讯混元 Hy3</strong> 凭借 1/4 元的旗舰定价获得3项最低价，成为本轮价格竞争力最强的平台。<strong>百炼</strong>凭借 qwen-long 独占10M上下文和 qwen3.7-flash 的输出最低价获得2项优势。<strong>豆包</strong>在代码模型和DeepSeek-V4-Pro托管价上有优势。<strong>百度</strong>的 ERNIE 4.5 Turbo 是 Plus 级的价格洼地。<strong>智谱</strong>的免费策略和推理模型低价值得关注。<strong>MiniMax</strong>的 M3 在官方和腾讯TokenHub价格合理，但百炼托管价偏高。总体而言，<strong>不同场景应选择不同平台</strong>：旗舰能力选腾讯Hy3或MiniMax M3，中端选百度ERNIE 4.5 Turbo，低成本选百炼flash或免费模型，代码选豆包，长上下文选百炼qwen-long。
+</p>
 
 </div>
 
-<!-- Tab 3: 能力排名 -->
+<!-- Tab 5: 旗舰&主力对比 -->
 <div id="panel-arena" class="tab-panel">
 
 <h2>能力排名 (Arena Leaderboard)</h2>
@@ -453,58 +442,69 @@ th.plat-tencent { border-top: 3px solid var(--c-tencent); }
 </div>
 
 <!-- Tab 4: 价格结论 -->
-<div id="panel-conclusion" class="tab-panel">
+<div id="panel-news" class="tab-panel">
 
-<h2>价格结论</h2>
+<h2>最新动态</h2>
+<p class="note-text">按时间倒序排列，覆盖2026年5月至8月的主要模型发布与价格变动。</p>
 
-<div class="conclusion-box">
-<h4>旗舰对比</h4>
-<p>腾讯混元 Hy3 以 1/4 元/百万Tokens 的定价，在7大平台旗舰模型中价格最低（输入+输出合计5元）。MiniMax M3 (2.1/8.4) 次之。Kimi K3 (20/100) 定价最高，反映其2.8T参数的巨大模型规模。百度 ERNIE 5.1 (4/18) 输出价较低，综合性价比突出。</p>
+<h3><span class="plat-badge bailian">百炼</span></h3>
+<ul class="news-list">
+  <li class="news-item bailian"><div class="news-date">2026-08-13</div><div class="news-title">PixVerse V6-R2V-Omni 视频生成模型上线 <span class="tag-new">NEW</span></div><div class="news-desc">融合参考生视频模型，支持图片+视频混合参考输入，智能融合多主体，多分辨率输出。</div></li>
+  <li class="news-item bailian"><div class="news-date">2026-08-12</div><div class="news-title">Qwen3.8-2.4T-A95B 开源版上线 <span class="tag-new">NEW</span></div><div class="news-desc">通义千问最新旗舰系列开源版，稀疏MoE架构（总参2.4万亿，每步激活约950亿），支持100万Token上下文。</div></li>
+  <li class="news-item bailian"><div class="news-date">2026-08-06</div><div class="news-title">万相3.0 全能参考视频生成模型上线 <span class="tag-new">NEW</span></div><div class="news-desc">wan3.0-video，统一支持文生视频、图生视频和参考生视频，最长可生成30秒视频。按分辨率计费：480P 0.30元/秒，720P 0.60元/秒，1080P 1.20元/秒。</div></li>
+  <li class="news-item bailian"><div class="news-date">2026-08-04</div><div class="news-title">Qwen-Image-3.0 图片生成模型上线 <span class="tag-new">NEW</span></div><div class="news-desc">支持4.5k token输入及复杂版面生成，10px小字精准渲染，支持12国语言字体原生渲染。</div></li>
+  <li class="news-item bailian"><div class="news-date">2026-08-03</div><div class="news-title">Qwen3.8-Max 旗舰模型发布 <span class="tag-new">NEW</span></div><div class="news-desc">2.4万亿参数MoE架构，原生视觉语言，上下文128K（可扩展至100万）。输入12元/百万Token，输出36元/百万Token。推理效率提升30%，幻觉率降低62%。</div></li>
+  <li class="news-item bailian"><div class="news-date">2026-08-01</div><div class="news-title">DeepSeek-V4-Flash 上线百炼 <span class="tag-new">NEW</span></div><div class="news-desc">284B总参/13B激活的轻量化MoE，百万上下文，1/2元/百万Tokens。</div></li>
+  <li class="news-item bailian"><div class="news-date">2026-07-30</div><div class="news-title">Qwen-Audio-3.0-ASR-Flash 语音识别上线 <span class="tag-new">NEW</span></div><div class="news-desc">支持汉语七大方言及20+口音、30个语种，专项优化古诗词识别。</div></li>
+  <li class="news-item bailian"><div class="news-date">2026-07-21</div><div class="news-title">qwen3.7-flash 发布 <span class="tag-new">NEW</span></div><div class="news-desc">原生视觉语言Flash模型，0.2/0.8元/百万Tokens，强化万物识别与空间智能。</div></li>
+  <li class="news-item bailian"><div class="news-date">2026-07-15</div><div class="news-title">GLM-5.2 Fast mode 降价20% <span class="tag-discount">折扣</span></div><div class="news-desc">百炼平台GLM-5.2 Fast mode模式计费下调20%。</div></li>
+</ul>
+
+<h3><span class="plat-badge doubao">豆包</span></h3>
+<ul class="news-list">
+  <li class="news-item doubao"><div class="news-date">2026-08-07</div><div class="news-title">Seedance 2.5 API 正式上线 <span class="tag-new">NEW</span></div><div class="news-desc">原生支持30秒视频直出，最高同步调用50个全模态参考素材。含视频输入42元/百万tokens，不含70元/百万tokens。</div></li>
+  <li class="news-item doubao"><div class="news-date">2026-08-07</div><div class="news-title">Seedance 2.0 限时折扣 <span class="tag-discount">折扣</span></div><div class="news-desc">Seedance 2.0 mini 4折计费，Seedance 2.0 fast 7.5折计费。</div></li>
+  <li class="news-item doubao"><div class="news-date">2026-06-23</div><div class="news-title">豆包 2.1 Pro 发布 <span class="tag-new">NEW</span></div><div class="news-desc">Coding/Agent/VLM三大升级，输入6元/百万Token，输出30元/百万Token，缓存命中1.2元。</div></li>
+  <li class="news-item doubao"><div class="news-date">2026-06</div><div class="news-title">Seed 2.1 Turbo 发布 <span class="tag-new">NEW</span></div><div class="news-desc">高性价比推理模型，3/15元/百万Tokens，缓存命中0.6元。</div></li>
+</ul>
+
+<h3><span class="plat-badge zhipu">智谱</span></h3>
+<ul class="news-list">
+  <li class="news-item zhipu"><div class="news-date">2026-08-10</div><div class="news-title">GLM-5.2 上线并MIT开源 <span class="tag-new">NEW</span></div><div class="news-desc">旗舰编程模型，1M上下文，128K最大输出。输入8元/百万tokens，输出28元/百万tokens。</div></li>
+  <li class="news-item zhipu"><div class="news-date">2026-08</div><div class="news-title">Coding Plan 套餐结构性调价</div><div class="news-desc">整体涨幅30%起，月费118元起。海外版涨至18/72/160美元。</div></li>
+  <li class="news-item zhipu"><div class="news-date">2026-03</div><div class="news-title">GLM-5-Turbo API 价格上调20%</div><div class="news-desc">打响2026年国产大模型涨价第一枪，相对GLM-4.7累计涨幅约83%。</div></li>
+</ul>
+
+<h3><span class="plat-badge kimi">Kimi</span></h3>
+<ul class="news-list">
+  <li class="news-item kimi"><div class="news-date">2026-08-04</div><div class="news-title">部分模型API将于8月31日下线</div><div class="news-desc">moonshot-v1系列及kimi-k2.5将于8月31日全平台下线，建议迁移至kimi-k3/k2.6/k2.7-code。</div></li>
+  <li class="news-item kimi"><div class="news-date">2026-07-29</div><div class="news-title">月之暗面完成超35亿美元F轮融资</div><div class="news-desc">估值超350亿美元，已完成股改转型为股份有限公司。</div></li>
+  <li class="news-item kimi"><div class="news-date">2026-07-17</div><div class="news-title">Kimi K3 正式发布 <span class="tag-new">NEW</span></div><div class="news-desc">2.8万亿参数旗舰，1M上下文，全球首个开源3T级模型。20/100元/百万Tokens。</div></li>
+</ul>
+
+<h3><span class="plat-badge minimax">MiniMax</span></h3>
+<ul class="news-list">
+  <li class="news-item minimax"><div class="news-date">2026-07-31</div><div class="news-title">MiniMax H3 视频模型发布并开源 <span class="tag-new">NEW</span></div><div class="news-desc">全模态生成模型，输出原生双声道音视频，支持2K分辨率最长15秒，登顶全球视频模型榜首。</div></li>
+  <li class="news-item minimax"><div class="news-date">2026-06-01</div><div class="news-title">MiniMax M3 旗舰语言模型发布 <span class="tag-new">NEW</span></div><div class="news-desc">1M超长上下文，MSA稀疏注意力架构，原生多模态，前沿Coding和Agent能力。</div></li>
+  <li class="news-item minimax"><div class="news-date">2026-05</div><div class="news-title">MiniMax 启动A股上市辅导</div><div class="news-desc">成为国内大模型创业公司中较早推进IPO的企业之一。</div></li>
+</ul>
+
+<h3><span class="plat-badge baidu">百度千帆</span></h3>
+<ul class="news-list">
+  <li class="news-item baidu"><div class="news-date">2026-08</div><div class="news-title">ERNIE 5.0 Thinking Preview 上线 <span class="tag-new">NEW</span></div><div class="news-desc">ERNIE 5.0 Thinking Preview 模型已上线并公布定价。</div></li>
+  <li class="news-item baidu"><div class="news-date">2026-05</div><div class="news-title">Token福利包：月费800元锁定13亿tokens <span class="tag-discount">折扣</span></div><div class="news-desc">百度千帆推出Token福利包订阅方案。</div></li>
+</ul>
+
+<h3><span class="plat-badge tencent">腾讯混元</span></h3>
+<ul class="news-list">
+  <li class="news-item tencent"><div class="news-date">2026-08-07</div><div class="news-title">MiniMax-M2.5 模型下线</div><div class="news-desc">自动升级至MiniMax-M3。</div></li>
+  <li class="news-item tencent"><div class="news-date">2026-07-06</div><div class="news-title">Hy3 正式发布 <span class="tag-new">NEW</span></div><div class="news-desc">MoE架构(295B总参/21B激活)，256K上下文，输入1元/输出4元/百万tokens，缓存0.25元。快慢思考融合。</div></li>
+  <li class="news-item tencent"><div class="news-date">2026-04</div><div class="news-title">平台从"混元"迁移至"TokenHub"</div><div class="news-desc">支持DeepSeek、GLM、Kimi、MiniMax、Qwen等第三方模型统一API入口。</div></li>
+</ul>
+
 </div>
 
-<div class="conclusion-box">
-<h4>中端主力 (Plus/Pro级)</h4>
-<p>百度 ERNIE 4.5 Turbo (0.8/3.2) 在 Plus/Pro 级别中价格最低，合计仅4元/百万Tokens，不到第二名的一半。百炼 qwen3.7-plus (2/8) 和智谱 GLM-4.7 (2/8) 持平，合计10元。豆包 seed-2.1-turbo (3/15) 合计18元，在同类中偏贵。</p>
-</div>
-
-<div class="conclusion-box">
-<h4>低成本方案</h4>
-<p>Flash/Lite级别：百炼 qwen3.7-flash (0.2/0.8) 输出价最低，合计1元/百万Tokens。豆包 seed-2.0-mini (0.2/2) 输入价持平但输出较贵。<br>
-免费模型：智谱 GLM-4.7-Flash 和腾讯 hunyuan-lite 完全免费，适合预算敏感或试探性调用。</p>
-</div>
-
-<div class="conclusion-box info">
-<h4>DeepSeek 跨平台托管价</h4>
-<p>DeepSeek-V4-Pro 存在巨大价差：豆包/腾讯(官方直连) 仅 3/6 元，而百炼/百度/腾讯(转售) 高达 12/24 元 -- 价差达4倍！<br>
-DeepSeek-V4-Flash 全平台统一 1/2 元，无价差。<br>
-<strong>建议</strong>：使用DeepSeek-V4-Pro应优先选择豆包或腾讯官方直连，可节省75%成本。</p>
-</div>
-
-<div class="conclusion-box info">
-<h4>第三方托管价格</h4>
-<p><strong>GLM-5.2</strong>：全平台统一 8/28 元，无价差。<br>
-<strong>Kimi K2.6</strong>：百度/腾讯/官方统一 6.5/27 元。<br>
-<strong>MiniMax M3</strong>：腾讯TokenHub (2.1/8.4) 与官方持平，百炼 (4.2/16.8) 贵1倍。<br>
-<strong>建议</strong>：MiniMax M3 应选择腾讯TokenHub或官方，避免在百炼以2倍价调用。</p>
-</div>
-
-<div class="conclusion-box warn">
-<h4>独家优势</h4>
-<p><strong>百炼</strong>：qwen-long 独占10M超长上下文（0.5/2元），无竞品。qwen3.7-flash 在Flash级输出价最低。<br>
-<strong>智谱</strong>：GLM-4.7-Flash 免费 + GLM-Z1-Air 推理模型仅0.5/0.5元。<br>
-<strong>腾讯</strong>：Hy3 旗舰价全平台最低(1/4)，hunyuan-lite 免费。<br>
-<strong>豆包</strong>：seed-2.0-code 编程模型最便宜(3.2/16)。<br>
-<strong>百度</strong>：ERNIE 4.5 Turbo 在Plus级最低(0.8/3.2)，且ERNIE 5.1输出价有竞争力。</p>
-</div>
-
-<h3>综合总结</h3>
-<p style="font-size:0.92rem; line-height:1.8; padding:0.8rem; background:#f8fafc; border-radius:8px;">
-在7大平台的横向对比中，<strong>腾讯混元 Hy3</strong> 凭借 1/4 元的旗舰定价获得3项最低价，成为本轮价格竞争力最强的平台。<strong>百炼</strong>凭借 qwen-long 独占10M上下文和 qwen3.7-flash 的输出最低价获得2项优势。<strong>豆包</strong>在代码模型和DeepSeek-V4-Pro托管价上有优势。<strong>百度</strong>的 ERNIE 4.5 Turbo 是 Plus 级的价格洼地。<strong>智谱</strong>的免费策略和推理模型低价值得关注。<strong>MiniMax</strong>的 M3 在官方和腾讯TokenHub价格合理，但百炼托管价偏高。总体而言，<strong>不同场景应选择不同平台</strong>：旗舰能力选腾讯Hy3或MiniMax M3，中端选百度ERNIE 4.5 Turbo，低成本选百炼flash或免费模型，代码选豆包，长上下文选百炼qwen-long。
-</p>
-
-</div>
-
-<!-- Tab 5: 旗舰&主力对比 -->
+<!-- Tab 3: 能力排名 -->
 <div id="panel-flagship" class="tab-panel">
 
 <h2>旗舰级对比</h2>
@@ -912,20 +912,6 @@ DeepSeek-V4-Flash 全平台统一 1/2 元，无价差。<br>
 </div>
 
 </div><!-- container end -->
-
-<div class="footer">
-  <p>数据来源：
-    <a href="https://help.aliyun.com/zh/model-studio/model-pricing" target="_blank">百炼</a> &middot;
-    <a href="https://docs.volcengine.com/docs/82379/1544106" target="_blank">豆包</a> &middot;
-    <a href="https://bigmodel.cn/pricing" target="_blank">智谱AI</a> &middot;
-    <a href="https://platform.kimi.com/docs/pricing/chat-k26" target="_blank">Kimi</a> &middot;
-    <a href="https://platform.minimaxi.com/docs/guides/pricing-paygo" target="_blank">MiniMax</a> &middot;
-    <a href="https://cloud.baidu.com/doc/qianfan/s/wmh4sv6ya" target="_blank">百度千帆</a> &middot;
-    <a href="https://cloud.tencent.com/document/product/1823/130055" target="_blank">腾讯混元</a> &middot;
-    <a href="https://www.datalearner.com/leaderboards/external/text-generation" target="_blank">Arena Leaderboard</a>
-  </p>
-  <p>本报告自动生成，价格以官方最新公示为准 &middot; 能力排名基于 LMSYS Chatbot Arena &middot; 阶梯定价取最低阶梯 &middot; 元/百万Tokens</p>
-</div>
 
 <script>
 function switchTab(id) {
