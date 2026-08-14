@@ -32,27 +32,7 @@ body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC"
 .header h1 { font-size: 1.8rem; font-weight: 700; margin-bottom: 0.3rem; }
 .header p { font-size: 0.95rem; color: #94a3b8; }
 .container { max-width: 1400px; margin: 0 auto; padding: 0 1rem; }
-.kpi-row { display: flex; flex-wrap: wrap; gap: 0.75rem; margin: -1.5rem 0 1.5rem; justify-content: center; position: relative; z-index: 1; }
-.kpi-card { background: var(--card); border-radius: 10px; padding: 0.9rem 1rem; min-width: 120px; text-align: center; box-shadow: 0 2px 8px rgba(0,0,0,0.06); border-top: 3px solid var(--border); flex: 1; max-width: 160px; }
-.kpi-card .kpi-num { font-size: 2rem; font-weight: 700; line-height: 1.2; }
-.kpi-card .kpi-label { font-size: 0.8rem; color: var(--text2); margin-top: 0.2rem; }
-.kpi-card.bailian { border-top-color: var(--c-bailian); }
-.kpi-card.bailian .kpi-num { color: var(--c-bailian); }
-.kpi-card.doubao { border-top-color: var(--c-doubao); }
-.kpi-card.doubao .kpi-num { color: var(--c-doubao); }
-.kpi-card.zhipu { border-top-color: var(--c-zhipu); }
-.kpi-card.zhipu .kpi-num { color: var(--c-zhipu); }
-.kpi-card.baidu { border-top-color: var(--c-baidu); }
-.kpi-card.baidu .kpi-num { color: var(--c-baidu); }
-.kpi-card.tencent { border-top-color: var(--c-tencent); }
-.kpi-card.tencent .kpi-num { color: var(--c-tencent); }
-.kpi-card.minimax { border-top-color: var(--c-minimax); }
-.kpi-card.minimax .kpi-num { color: var(--c-minimax); }
-.kpi-card.free { border-top-color: var(--green); }
-.kpi-card.free .kpi-num { color: var(--green); }
-.kpi-card.new-models { border-top-color: var(--orange); }
-.kpi-card.new-models .kpi-num { color: var(--orange); }
-.tabs { display: flex; background: #1e293b; border-radius: 10px 10px 0 0; overflow-x: auto; margin-top: 0.5rem; }
+.tabs { display: flex; background: #1e293b; border-radius: 10px 10px 0 0; overflow-x: auto; margin-top: 1.5rem; }
 .tab-btn { font-size: 1rem; font-weight: 500; color: #94a3b8; background: transparent; border: none; cursor: pointer; padding: 0.75rem 1.2rem; white-space: nowrap; position: relative; transition: color 0.2s; }
 .tab-btn:hover { color: #cbd5e1; }
 .tab-btn.active { color: #fff; }
@@ -118,8 +98,6 @@ th.plat-tencent { border-top: 3px solid var(--c-tencent); }
 .note-text { font-size: 0.82rem; color: #888; margin-top: 0.3rem; }
 @media (max-width: 768px) {
   .header h1 { font-size: 1.3rem; }
-  .kpi-card .kpi-num { font-size: 1.5rem; }
-  .kpi-card { min-width: 90px; padding: 0.6rem; }
   table { font-size: 0.78rem; }
   .tab-btn { font-size: 0.85rem; padding: 0.6rem 0.8rem; }
   .tab-panel { padding: 1rem; }
@@ -135,16 +113,6 @@ th.plat-tencent { border-top: 3px solid var(--c-tencent); }
 
 <div class="container">
 
-<div class="kpi-row">
-  <div class="kpi-card bailian"><div class="kpi-num">2</div><div class="kpi-label">百炼最低价项</div></div>
-  <div class="kpi-card doubao"><div class="kpi-num">2</div><div class="kpi-label">豆包最低价项</div></div>
-  <div class="kpi-card zhipu"><div class="kpi-num">1</div><div class="kpi-label">智谱最低价项</div></div>
-  <div class="kpi-card baidu"><div class="kpi-num">1</div><div class="kpi-label">百度最低价项</div></div>
-  <div class="kpi-card tencent"><div class="kpi-num">3</div><div class="kpi-label">腾讯最低价项</div></div>
-  <div class="kpi-card minimax"><div class="kpi-num">1</div><div class="kpi-label">MiniMax最低价项</div></div>
-  <div class="kpi-card free"><div class="kpi-num">2</div><div class="kpi-label">免费模型</div></div>
-  <div class="kpi-card new-models"><div class="kpi-num">21</div><div class="kpi-label">近期新模型</div></div>
-</div>
 
 <div class="tabs">
   <button class="tab-btn active" onclick="switchTab('overview')">总览</button>
