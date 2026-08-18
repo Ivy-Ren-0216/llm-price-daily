@@ -33,6 +33,9 @@ a{color:#3b82f6;text-decoration:none}a:hover{text-decoration:underline}
 .dt th{background:#f8fafc;font-weight:600;color:#334155;padding:.55rem .6rem;text-align:left;border-bottom:2px solid #e2e8f0;white-space:nowrap}
 .dt td{padding:.5rem .6rem;border-bottom:1px solid #f1f5f9;vertical-align:top}
 .dt tbody tr:hover{background:#f8fafc}
+.dt tbody tr.cheapest{background:#f0fdf4}
+.dt tbody tr.cheapest:hover{background:#dcfce7}
+.dt tbody tr.cheapest .n{color:#059669;font-weight:600}
 .mn{font-weight:600;color:#1e293b}
 .n{text-align:right;font-variant-numeric:tabular-nums}
 .sub{color:#94a3b8;font-size:.76rem}
@@ -40,6 +43,7 @@ a{color:#3b82f6;text-decoration:none}a:hover{text-decoration:underline}
 /* Arena */
 .arena .tr-gold{background:#fffbeb}.arena .tr-silver{background:#fafbfc}
 .arena .tr-gold:hover,.arena .tr-silver:hover{background:#fef9c3}
+.arena .tr-gold td:first-child{color:#b45309;font-weight:700}
 .best-cp{color:#059669;font-weight:700}
 /* Insight cards */
 .ic{background:#f8fafc;border-left:3px solid #3b82f6;border-radius:0 8px 8px 0;padding:.9rem 1.1rem;margin:1rem 0}
@@ -48,8 +52,14 @@ a{color:#3b82f6;text-decoration:none}a:hover{text-decoration:underline}
 .it{font-weight:700;font-size:.88rem;color:#1e293b}
 .ic-row{display:grid;grid-template-columns:repeat(3,1fr);gap:.9rem;margin:1.2rem 0}
 .ic.s{margin:0}
+.ic.s:nth-child(1){border-left-color:#3b82f6}.ic.s:nth-child(2){border-left-color:#d97706}.ic.s:nth-child(3){border-left-color:#059669}
 /* Tags */
 .ts{display:inline-block;padding:.08rem .3rem;border-radius:3px;font-size:.63rem;background:#f1f5f9;color:#64748b;margin-left:.15rem;font-weight:500}
+.ts-flagship,.ts-旗舰{background:#dbeafe;color:#2563eb}
+.ts-free,.ts-免费{background:#dcfce7;color:#059669}
+.ts-code,.ts-代码{background:#fef3c7;color:#b45309}
+.ts-reasoning,.ts-推理{background:#fce7f3;color:#be185d}
+.ts-vision,.ts-视觉{background:#e0f2fe;color:#0369a1}
 .badge-new{display:inline-block;padding:.08rem .35rem;border-radius:3px;font-size:.63rem;background:linear-gradient(135deg,#f59e0b,#ef4444);color:#fff;font-weight:700;margin-left:.25rem;vertical-align:middle}
 /* News */
 .nl{display:flex;flex-direction:column;gap:.6rem}
@@ -78,57 +88,57 @@ h4{font-size:.92rem;font-weight:600;color:#334155;margin:1.2rem 0 .4rem}
 </div>
 <div class="tc">
 <div class="tp a" id="p-ov"><div class="metrics">
-  <div class="mc"><div class="ml">最强能力</div><div class="mv">Qwen3.8-Max</div><div class="md">Elo 1491 · 全球第 8 · 百炼 12/36</div></div>
-  <div class="mc"><div class="ml">旗舰最低价</div><div class="mv">ERNIE 5.1 · 22 元</div><div class="md">比 Kimi K3 (120元) 便宜 82%</div></div>
-  <div class="mc"><div class="ml">中端性价比</div><div class="mv">Hy3 · 5 元</div><div class="md">Elo 1457 · 能力接近旗舰但定价偏中端</div></div>
-  <div class="mc"><div class="ml">免费也强</div><div class="mv">GLM-4.7-Flash</div><div class="md">Elo 1367 · 完全免费 · 智谱</div></div>
+  <div class="mc" style="border-top:3px solid #3b82f6"><div class="ml">最强能力</div><div class="mv">Qwen3.8-Max</div><div class="md">Elo 1491 · 全球第 8 · 百炼 12/36</div></div>
+  <div class="mc" style="border-top:3px solid #059669"><div class="ml">旗舰最低价</div><div class="mv">ERNIE 5.1 · 22 元</div><div class="md">比 Kimi K3 (120元) 便宜 82%</div></div>
+  <div class="mc" style="border-top:3px solid #d97706"><div class="ml">中端性价比</div><div class="mv">Hy3 · 5 元</div><div class="md">Elo 1457 · 能力接近旗舰但定价偏中端</div></div>
+  <div class="mc" style="border-top:3px solid #7c3aed"><div class="ml">免费也强</div><div class="mv">GLM-4.7-Flash</div><div class="md">Elo 1367 · 完全免费 · 智谱</div></div>
 </div><div class="tier-section">
-  <div class="tier-header"><h3>最新旗舰</h3><span class="tier-desc">各家最新代旗舰 · Elo 1440–1491</span></div>
+  <div class="tier-header" style="border-left:4px solid #3b82f6;padding-left:.8rem"><h3>最新旗舰</h3><span class="tier-desc">各家最新代旗舰 · Elo 1440–1491</span></div>
   <p class="tier-note">同一代最强模型横向对比 · 最低：百度千帆 ERNIE 5.1（总价 22）</p>
-  <table class="dt"><thead><tr><th>平台</th><th>模型</th><th class="n">输入</th><th class="n">输出</th><th class="n">总价</th><th class="n">Elo</th></tr></thead><tbody><tr><td><span class="dot" style="background:#2563eb"></span>百炼</td><td class="mn">Qwen3.8-Max<div class="sub">2.4T MoE</div></td><td class="n">12</td><td class="n">36</td><td class="n">48</td><td class="n">1491</td></tr>
-<tr><td><span class="dot" style="background:#0891b2"></span>Kimi</td><td class="mn">Kimi K3<div class="sub">1M上下文 · 开源</div></td><td class="n">20</td><td class="n">100</td><td class="n">120</td><td class="n">1489</td></tr>
-<tr><td><span class="dot" style="background:#7c3aed"></span>智谱</td><td class="mn">GLM-5.2<div class="sub">新品</div></td><td class="n">8</td><td class="n">28</td><td class="n">36</td><td class="n">1471</td></tr>
-<tr><td><span class="dot" style="background:#2932e1"></span>百度千帆</td><td class="mn">ERNIE 5.1<div class="sub">阶梯价≤32K</div></td><td class="n">4</td><td class="n">18</td><td class="n">22</td><td class="n">1468</td></tr>
-<tr><td><span class="dot" style="background:#ea580c"></span>豆包</td><td class="mn">Seed-Evolving<div class="sub">最新版</div></td><td class="n">6</td><td class="n">30</td><td class="n">36</td><td class="n">1456</td></tr>
+  <table class="dt"><thead><tr><th>平台</th><th>模型</th><th class="n">输入</th><th class="n">输出</th><th class="n">总价</th><th class="n">Elo</th></tr></thead><tbody><tr class=""><td><span class="dot" style="background:#2563eb"></span>百炼</td><td class="mn">Qwen3.8-Max<div class="sub">2.4T MoE</div></td><td class="n">12</td><td class="n">36</td><td class="n">48</td><td class="n">1491</td></tr>
+<tr class=""><td><span class="dot" style="background:#0891b2"></span>Kimi</td><td class="mn">Kimi K3<div class="sub">1M上下文 · 开源</div></td><td class="n">20</td><td class="n">100</td><td class="n">120</td><td class="n">1489</td></tr>
+<tr class=""><td><span class="dot" style="background:#7c3aed"></span>智谱</td><td class="mn">GLM-5.2<div class="sub">新品</div></td><td class="n">8</td><td class="n">28</td><td class="n">36</td><td class="n">1471</td></tr>
+<tr class="cheapest"><td><span class="dot" style="background:#2932e1"></span>百度千帆</td><td class="mn">ERNIE 5.1<div class="sub">阶梯价≤32K</div></td><td class="n">4</td><td class="n">18</td><td class="n">22</td><td class="n">1468</td></tr>
+<tr class=""><td><span class="dot" style="background:#ea580c"></span>豆包</td><td class="mn">Seed-Evolving<div class="sub">最新版</div></td><td class="n">6</td><td class="n">30</td><td class="n">36</td><td class="n">1456</td></tr>
 </tbody></table>
 </div><div class="tier-section">
-  <div class="tier-header"><h3>强能力</h3><span class="tier-desc">接近旗舰的上一代/高配 · Elo 1440–1470</span></div>
+  <div class="tier-header" style="border-left:4px solid #059669;padding-left:.8rem"><h3>强能力</h3><span class="tier-desc">接近旗舰的上一代/高配 · Elo 1440–1470</span></div>
   <p class="tier-note">上一代旗舰或高配中端，能力接近新旗舰 · 最低：百炼 Qwen3-Max（总价 12.5）</p>
-  <table class="dt"><thead><tr><th>平台</th><th>模型</th><th class="n">输入</th><th class="n">输出</th><th class="n">总价</th><th class="n">Elo</th></tr></thead><tbody><tr><td><span class="dot" style="background:#7c3aed"></span>智谱</td><td class="mn">GLM-5.1<div class="sub">阶梯价&lt;32K</div></td><td class="n">6</td><td class="n">24</td><td class="n">30</td><td class="n">1467</td></tr>
-<tr><td><span class="dot" style="background:#2563eb"></span>百炼</td><td class="mn">Qwen3-Max<div class="sub">阶梯价≤32K</div></td><td class="n">2.5</td><td class="n">10</td><td class="n">12.5</td><td class="n">1466</td></tr>
-<tr><td><span class="dot" style="background:#0891b2"></span>Kimi</td><td class="mn">Kimi K2.6<div class="sub">视觉+文本</div></td><td class="n">6.5</td><td class="n">27</td><td class="n">33.5</td><td class="n">1461</td></tr>
-<tr><td><span class="dot" style="background:#7c3aed"></span>智谱</td><td class="mn">GLM-5<div class="sub">阶梯价&lt;32K</div></td><td class="n">4</td><td class="n">18</td><td class="n">22</td><td class="n">1457</td></tr>
-<tr><td><span class="dot" style="background:#ea580c"></span>豆包</td><td class="mn">Seed 2.0 Pro<div class="sub">Elo≈Seed-2.1</div></td><td class="n">3.2</td><td class="n">16</td><td class="n">19.2</td><td class="n">1456</td></tr>
-<tr><td><span class="dot" style="background:#2932e1"></span>百度千帆</td><td class="mn">ERNIE 5.0</td><td class="n">6</td><td class="n">24</td><td class="n">30</td><td class="n">1446</td></tr>
+  <table class="dt"><thead><tr><th>平台</th><th>模型</th><th class="n">输入</th><th class="n">输出</th><th class="n">总价</th><th class="n">Elo</th></tr></thead><tbody><tr class=""><td><span class="dot" style="background:#7c3aed"></span>智谱</td><td class="mn">GLM-5.1<div class="sub">阶梯价&lt;32K</div></td><td class="n">6</td><td class="n">24</td><td class="n">30</td><td class="n">1467</td></tr>
+<tr class="cheapest"><td><span class="dot" style="background:#2563eb"></span>百炼</td><td class="mn">Qwen3-Max<div class="sub">阶梯价≤32K</div></td><td class="n">2.5</td><td class="n">10</td><td class="n">12.5</td><td class="n">1466</td></tr>
+<tr class=""><td><span class="dot" style="background:#0891b2"></span>Kimi</td><td class="mn">Kimi K2.6<div class="sub">视觉+文本</div></td><td class="n">6.5</td><td class="n">27</td><td class="n">33.5</td><td class="n">1461</td></tr>
+<tr class=""><td><span class="dot" style="background:#7c3aed"></span>智谱</td><td class="mn">GLM-5<div class="sub">阶梯价&lt;32K</div></td><td class="n">4</td><td class="n">18</td><td class="n">22</td><td class="n">1457</td></tr>
+<tr class=""><td><span class="dot" style="background:#ea580c"></span>豆包</td><td class="mn">Seed 2.0 Pro<div class="sub">Elo≈Seed-2.1</div></td><td class="n">3.2</td><td class="n">16</td><td class="n">19.2</td><td class="n">1456</td></tr>
+<tr class=""><td><span class="dot" style="background:#2932e1"></span>百度千帆</td><td class="mn">ERNIE 5.0</td><td class="n">6</td><td class="n">24</td><td class="n">30</td><td class="n">1446</td></tr>
 </tbody></table>
 </div><div class="tier-section">
-  <div class="tier-header"><h3>中端主力</h3><span class="tier-desc">Elo 1410–1460 · 性价比甜点</span></div>
+  <div class="tier-header" style="border-left:4px solid #d97706;padding-left:.8rem"><h3>中端主力</h3><span class="tier-desc">Elo 1410–1460 · 性价比甜点</span></div>
   <p class="tier-note">日常主力选择，能力与价格平衡点 · 最低：百度千帆 ERNIE 4.5-Turbo（总价 4）</p>
-  <table class="dt"><thead><tr><th>平台</th><th>模型</th><th class="n">输入</th><th class="n">输出</th><th class="n">总价</th><th class="n">Elo</th></tr></thead><tbody><tr><td><span class="dot" style="background:#2563eb"></span>百炼</td><td class="mn">Qwen3.7-Plus<div class="sub">限时8折</div></td><td class="n">2</td><td class="n">8</td><td class="n">10</td><td class="n">1458</td></tr>
-<tr><td><span class="dot" style="background:#07c160"></span>腾讯混元</td><td class="mn">Hy3<div class="sub">腾讯主推·低价策略</div></td><td class="n">1</td><td class="n">4</td><td class="n">5</td><td class="n">1457</td></tr>
-<tr><td><span class="dot" style="background:#e11d48"></span>MiniMax</td><td class="mn">MiniMax-M3<div class="sub">标准档5折·全系列同价</div></td><td class="n">2.1</td><td class="n">8.4</td><td class="n">10.5</td><td class="n">1444</td></tr>
-<tr><td><span class="dot" style="background:#7c3aed"></span>智谱</td><td class="mn">GLM-4.7</td><td class="n">2</td><td class="n">8</td><td class="n">10</td><td class="n">1442</td></tr>
-<tr><td><span class="dot" style="background:#0891b2"></span>Kimi</td><td class="mn">Kimi K2.5</td><td class="n">4</td><td class="n">21</td><td class="n">25</td><td class="n">1431</td></tr>
-<tr><td><span class="dot" style="background:#e11d48"></span>MiniMax</td><td class="mn">MiniMax-M2.7</td><td class="n">2.1</td><td class="n">8.4</td><td class="n">10.5</td><td class="n">1416</td></tr>
-<tr><td><span class="dot" style="background:#ea580c"></span>豆包</td><td class="mn">Seed-2.1-Turbo<div class="sub">NEW</div></td><td class="n">3</td><td class="n">15</td><td class="n">18</td><td class="n"><span class="sub">—</span></td></tr>
-<tr><td><span class="dot" style="background:#2932e1"></span>百度千帆</td><td class="mn">ERNIE 4.5-Turbo<div class="sub">缓存命中0.2</div></td><td class="n">0.8</td><td class="n">3.2</td><td class="n">4</td><td class="n"><span class="sub">—</span></td></tr>
-<tr><td><span class="dot" style="background:#07c160"></span>腾讯混元</td><td class="mn">Hy-Role-Latest</td><td class="n">2.4</td><td class="n">9.6</td><td class="n">12</td><td class="n"><span class="sub">—</span></td></tr>
+  <table class="dt"><thead><tr><th>平台</th><th>模型</th><th class="n">输入</th><th class="n">输出</th><th class="n">总价</th><th class="n">Elo</th></tr></thead><tbody><tr class=""><td><span class="dot" style="background:#2563eb"></span>百炼</td><td class="mn">Qwen3.7-Plus<div class="sub">限时8折</div></td><td class="n">2</td><td class="n">8</td><td class="n">10</td><td class="n">1458</td></tr>
+<tr class=""><td><span class="dot" style="background:#07c160"></span>腾讯混元</td><td class="mn">Hy3<div class="sub">腾讯主推·低价策略</div></td><td class="n">1</td><td class="n">4</td><td class="n">5</td><td class="n">1457</td></tr>
+<tr class=""><td><span class="dot" style="background:#e11d48"></span>MiniMax</td><td class="mn">MiniMax-M3<div class="sub">标准档5折·全系列同价</div></td><td class="n">2.1</td><td class="n">8.4</td><td class="n">10.5</td><td class="n">1444</td></tr>
+<tr class=""><td><span class="dot" style="background:#7c3aed"></span>智谱</td><td class="mn">GLM-4.7</td><td class="n">2</td><td class="n">8</td><td class="n">10</td><td class="n">1442</td></tr>
+<tr class=""><td><span class="dot" style="background:#0891b2"></span>Kimi</td><td class="mn">Kimi K2.5</td><td class="n">4</td><td class="n">21</td><td class="n">25</td><td class="n">1431</td></tr>
+<tr class=""><td><span class="dot" style="background:#e11d48"></span>MiniMax</td><td class="mn">MiniMax-M2.7</td><td class="n">2.1</td><td class="n">8.4</td><td class="n">10.5</td><td class="n">1416</td></tr>
+<tr class=""><td><span class="dot" style="background:#ea580c"></span>豆包</td><td class="mn">Seed-2.1-Turbo<div class="sub">NEW</div></td><td class="n">3</td><td class="n">15</td><td class="n">18</td><td class="n"><span class="sub">—</span></td></tr>
+<tr class="cheapest"><td><span class="dot" style="background:#2932e1"></span>百度千帆</td><td class="mn">ERNIE 4.5-Turbo<div class="sub">缓存命中0.2</div></td><td class="n">0.8</td><td class="n">3.2</td><td class="n">4</td><td class="n"><span class="sub">—</span></td></tr>
+<tr class=""><td><span class="dot" style="background:#07c160"></span>腾讯混元</td><td class="mn">Hy-Role-Latest</td><td class="n">2.4</td><td class="n">9.6</td><td class="n">12</td><td class="n"><span class="sub">—</span></td></tr>
 </tbody></table>
 </div><div class="tier-section">
-  <div class="tier-header"><h3>轻量级</h3><span class="tier-desc">低成本首选 · 总价 < 5 元</span></div>
+  <div class="tier-header" style="border-left:4px solid #7c3aed;padding-left:.8rem"><h3>轻量级</h3><span class="tier-desc">低成本首选 · 总价 < 5 元</span></div>
   <p class="tier-note">轻量任务、高吞吐场景首选 · 最低：百炼 Qwen3.7-Flash（总价 1）</p>
-  <table class="dt"><thead><tr><th>平台</th><th>模型</th><th class="n">输入</th><th class="n">输出</th><th class="n">总价</th><th class="n">Elo</th></tr></thead><tbody><tr><td><span class="dot" style="background:#2563eb"></span>百炼</td><td class="mn">Qwen3.7-Flash<div class="sub">阶梯价≤32K</div></td><td class="n">0.2</td><td class="n">0.8</td><td class="n">1</td><td class="n"><span class="sub">—</span></td></tr>
-<tr><td><span class="dot" style="background:#7c3aed"></span>智谱</td><td class="mn">GLM-4.5-Air<div class="sub">限时5折</div></td><td class="n">0.8</td><td class="n">2</td><td class="n">2.8</td><td class="n"><span class="sub">—</span></td></tr>
-<tr><td><span class="dot" style="background:#07c160"></span>腾讯混元</td><td class="mn">Hy-MT2-Lite</td><td class="n">0.3</td><td class="n">1.2</td><td class="n">1.5</td><td class="n"><span class="sub">—</span></td></tr>
-<tr><td><span class="dot" style="background:#ea580c"></span>豆包</td><td class="mn">Seed-1.6-Flash<div class="sub">阶梯价≤32K</div></td><td class="n">0.15</td><td class="n">1.5</td><td class="n">1.65</td><td class="n"><span class="sub">—</span></td></tr>
-<tr><td><span class="dot" style="background:#2932e1"></span>百度千帆</td><td class="mn">Qwen3.5-Flash<div class="sub">第三方托管</div></td><td class="n">0.2</td><td class="n">2</td><td class="n">2.2</td><td class="n"><span class="sub">—</span></td></tr>
+  <table class="dt"><thead><tr><th>平台</th><th>模型</th><th class="n">输入</th><th class="n">输出</th><th class="n">总价</th><th class="n">Elo</th></tr></thead><tbody><tr class="cheapest"><td><span class="dot" style="background:#2563eb"></span>百炼</td><td class="mn">Qwen3.7-Flash<div class="sub">阶梯价≤32K</div></td><td class="n">0.2</td><td class="n">0.8</td><td class="n">1</td><td class="n"><span class="sub">—</span></td></tr>
+<tr class=""><td><span class="dot" style="background:#7c3aed"></span>智谱</td><td class="mn">GLM-4.5-Air<div class="sub">限时5折</div></td><td class="n">0.8</td><td class="n">2</td><td class="n">2.8</td><td class="n"><span class="sub">—</span></td></tr>
+<tr class=""><td><span class="dot" style="background:#07c160"></span>腾讯混元</td><td class="mn">Hy-MT2-Lite</td><td class="n">0.3</td><td class="n">1.2</td><td class="n">1.5</td><td class="n"><span class="sub">—</span></td></tr>
+<tr class=""><td><span class="dot" style="background:#ea580c"></span>豆包</td><td class="mn">Seed-1.6-Flash<div class="sub">阶梯价≤32K</div></td><td class="n">0.15</td><td class="n">1.5</td><td class="n">1.65</td><td class="n"><span class="sub">—</span></td></tr>
+<tr class=""><td><span class="dot" style="background:#2932e1"></span>百度千帆</td><td class="mn">Qwen3.5-Flash<div class="sub">第三方托管</div></td><td class="n">0.2</td><td class="n">2</td><td class="n">2.2</td><td class="n"><span class="sub">—</span></td></tr>
 </tbody></table>
 </div><div class="tier-section">
-  <div class="tier-header"><h3>免费档</h3><span class="tier-desc">零成本 · 适合探索与原型验证</span></div>
+  <div class="tier-header" style="border-left:4px solid #0891b2;padding-left:.8rem"><h3>免费档</h3><span class="tier-desc">零成本 · 适合探索与原型验证</span></div>
   <p class="tier-note">完全免费，部分有调用频次限制 · </p>
-  <table class="dt"><thead><tr><th>平台</th><th>模型</th><th class="n">输入</th><th class="n">输出</th><th class="n">总价</th><th class="n">Elo</th></tr></thead><tbody><tr><td><span class="dot" style="background:#7c3aed"></span>智谱</td><td class="mn">GLM-4.7-Flash<div class="sub">Elo 1367</div></td><td class="n">免费</td><td class="n">免费</td><td class="n">免费</td><td class="n">1367</td></tr>
-<tr><td><span class="dot" style="background:#7c3aed"></span>智谱</td><td class="mn">GLM-4-Flash</td><td class="n">免费</td><td class="n">免费</td><td class="n">免费</td><td class="n"><span class="sub">—</span></td></tr>
-<tr><td><span class="dot" style="background:#07c160"></span>腾讯混元</td><td class="mn">Hunyuan-Lite</td><td class="n">免费</td><td class="n">免费</td><td class="n">免费</td><td class="n"><span class="sub">—</span></td></tr>
+  <table class="dt"><thead><tr><th>平台</th><th>模型</th><th class="n">输入</th><th class="n">输出</th><th class="n">总价</th><th class="n">Elo</th></tr></thead><tbody><tr class="cheapest"><td><span class="dot" style="background:#7c3aed"></span>智谱</td><td class="mn">GLM-4.7-Flash<div class="sub">Elo 1367</div></td><td class="n">免费</td><td class="n">免费</td><td class="n">免费</td><td class="n">1367</td></tr>
+<tr class="cheapest"><td><span class="dot" style="background:#7c3aed"></span>智谱</td><td class="mn">GLM-4-Flash</td><td class="n">免费</td><td class="n">免费</td><td class="n">免费</td><td class="n"><span class="sub">—</span></td></tr>
+<tr class="cheapest"><td><span class="dot" style="background:#07c160"></span>腾讯混元</td><td class="mn">Hunyuan-Lite</td><td class="n">免费</td><td class="n">免费</td><td class="n">免费</td><td class="n"><span class="sub">—</span></td></tr>
 </tbody></table>
 </div><div class="tier-section">
   <div class="tier-header"><h3>第三方模型跨平台托管价</h3><span class="tier-desc">同一模型在不同平台的价格差异</span></div>
