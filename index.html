@@ -103,6 +103,11 @@ a{color:#3b82f6;text-decoration:none}a:hover{text-decoration:underline}
 .fc-dim-bar{height:4px;background:#f1f5f9;border-radius:2px}
 .fc-dim-fill{height:100%;border-radius:2px;background:var(--c);opacity:.65}
 .fc-insight{background:#f8fafc;border-left:3px solid #3b82f6;border-radius:0 8px 8px 0;padding:.9rem 1.1rem;margin:1rem 0;font-size:.84rem;line-height:1.7;color:#475569}
+.fc-usecases{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:.8rem;margin:.8rem 0 1.5rem}
+.fc-uc{background:#fafbfc;border:1px solid #e5e7eb;border-radius:10px;padding:.9rem 1rem;border-top:3px solid var(--c,#e5e7eb)}
+.fc-uc-scene{font-size:.78rem;color:#64748b;font-weight:600;margin-bottom:.2rem}
+.fc-uc-model{font-size:1rem;font-weight:700;margin-bottom:.3rem}
+.fc-uc-desc{font-size:.8rem;color:#475569;line-height:1.5}
 /* News */
 .nl{display:flex;flex-direction:column;gap:.6rem}
 .ni{padding:.8rem 1rem;border-radius:8px;border:1px solid #f1f5f9;border-left:3px solid var(--accent,#cbd5e1);background:#fafbfc;transition:border-color .2s}
@@ -121,16 +126,16 @@ h4{font-size:.92rem;font-weight:600;color:#334155;margin:1.2rem 0 .4rem}
 <div class="hd"><div class="hd-in"><h1>大模型价格对比日报</h1><div class="hm">七大平台横向对比 · 2026-08-18 · 单位：元/百万Tokens · 阶梯定价取最低档 · 对标基于 Arena Elo 能力评分</div></div></div>
 <div class="main">
 <div class="tabs">
-<button class="tb a" onclick="sw(this,'ov')">关键发现</button>
+<button class="tb a" onclick="sw(this,'fc')">重点模型对比</button>
+<button class="tb" onclick="sw(this,'ov')">关键发现</button>
 <button class="tb" onclick="sw(this,'fl')">旗舰&主力对比</button>
 <button class="tb" onclick="sw(this,'ar')">能力排名</button>
 <button class="tb" onclick="sw(this,'nw')">最新动态</button>
-<button class="tb" onclick="sw(this,'fc')">重点模型对比</button>
 <button class="tb" onclick="sw(this,'at')">全平台文本模型</button>
 <button class="tb" onclick="sw(this,'nt')">非文本模型</button>
 </div>
 <div class="tc">
-<div class="tp a" id="p-ov"><div class="metrics">
+<div class="tp" id="p-ov"><div class="metrics">
   <div class="mc" style="border-top:3px solid #3b82f6"><div class="ml">最强能力</div><div class="mv">Qwen3.8-Max</div><div class="md">Elo 1491 · 全球第 8 · 百炼 12/36</div></div>
   <div class="mc" style="border-top:3px solid #059669"><div class="ml">旗舰最低价</div><div class="mv">ERNIE 5.1 · 22 元</div><div class="md">比 Kimi K3 (120元) 便宜 82%</div></div>
   <div class="mc" style="border-top:3px solid #d97706"><div class="ml">中端性价比</div><div class="mv">Hy3 · 5 元</div><div class="md">Elo 1457 · 能力接近旗舰但定价偏中端</div></div>
@@ -355,22 +360,37 @@ h4{font-size:.92rem;font-weight:600;color:#334155;margin:1.2rem 0 .4rem}
   <div class="nt"><span class="dot" style="background:#0891b2"></span>Kimi · Kimi K3 上线</div>
   <div class="ndesc">首个开源 3 万亿级模型，1M 上下文，官方价 20/100 元/百万Tokens。</div>
 </div></div></div>
-<div class="tp" id="p-fc"><div class="fc-wrap"><div class="fc-radar"><svg viewBox="0 0 400 400" style="width:100%;max-width:360px;height:auto"><polygon points="200.0,169.0 226.8,184.5 226.8,215.5 200.0,231.0 173.2,215.5 173.2,184.5" fill="none" stroke="#e2e8f0" stroke-width="0.8"/><polygon points="200.0,138.0 253.7,169.0 253.7,231.0 200.0,262.0 146.3,231.0 146.3,169.0" fill="none" stroke="#e2e8f0" stroke-width="0.8"/><polygon points="200.0,107.0 280.5,153.5 280.5,246.5 200.0,293.0 119.5,246.5 119.5,153.5" fill="none" stroke="#e2e8f0" stroke-width="0.8"/><polygon points="200.0,76.0 307.4,138.0 307.4,262.0 200.0,324.0 92.6,262.0 92.6,138.0" fill="none" stroke="#e2e8f0" stroke-width="0.8"/><polygon points="200.0,45.0 334.2,122.5 334.2,277.5 200.0,355.0 65.8,277.5 65.8,122.5" fill="none" stroke="#e2e8f0" stroke-width="0.8"/><line x1="200" y1="200" x2="200.0" y2="45.0" stroke="#e2e8f0" stroke-width="0.8"/><text x="200.0" y="23.0" text-anchor="middle" dominant-baseline="middle" fill="#475569" font-size="12" font-weight="500">综合能力</text><line x1="200" y1="200" x2="334.2" y2="122.5" stroke="#e2e8f0" stroke-width="0.8"/><text x="353.3" y="111.5" text-anchor="middle" dominant-baseline="middle" fill="#475569" font-size="12" font-weight="500">编程</text><line x1="200" y1="200" x2="334.2" y2="277.5" stroke="#e2e8f0" stroke-width="0.8"/><text x="353.3" y="288.5" text-anchor="middle" dominant-baseline="middle" fill="#475569" font-size="12" font-weight="500">专业深度</text><line x1="200" y1="200" x2="200.0" y2="355.0" stroke="#e2e8f0" stroke-width="0.8"/><text x="200.0" y="377.0" text-anchor="middle" dominant-baseline="middle" fill="#475569" font-size="12" font-weight="500">稳定性</text><line x1="200" y1="200" x2="65.8" y2="277.5" stroke="#e2e8f0" stroke-width="0.8"/><text x="46.7" y="288.5" text-anchor="middle" dominant-baseline="middle" fill="#475569" font-size="12" font-weight="500">输出效率</text><line x1="200" y1="200" x2="65.8" y2="122.5" stroke="#e2e8f0" stroke-width="0.8"/><text x="46.7" y="111.5" text-anchor="middle" dominant-baseline="middle" fill="#475569" font-size="12" font-weight="500">性价比</text><polygon points="200.0,60.5 318.1,131.8 327.5,273.6 200.0,320.9 116.8,248.1 119.5,153.5" fill="#2563eb" fill-opacity="0.08" stroke="#2563eb" stroke-width="1.8"/><polygon points="200.0,52.8 328.9,125.6 323.5,271.3 200.0,339.5 81.9,268.2 135.6,162.8" fill="#0891b2" fill-opacity="0.08" stroke="#0891b2" stroke-width="1.8"/><polygon points="200.0,72.9 323.5,128.7 307.4,262.0 200.0,280.6 126.2,242.6 92.6,138.0" fill="#7c3aed" fill-opacity="0.08" stroke="#7c3aed" stroke-width="1.8"/><polygon points="200.0,66.7 312.8,134.9 300.7,258.1 200.0,327.1 106.0,254.3 79.2,130.2" fill="#ea580c" fill-opacity="0.08" stroke="#ea580c" stroke-width="1.8"/><polygon points="200.0,94.6 285.9,150.4 264.4,237.2 200.0,316.2 72.5,273.6 72.5,126.4" fill="#059669" fill-opacity="0.08" stroke="#059669" stroke-width="1.8"/></svg><div class="fc-legend"><div class="fc-lg-i"><span class="fc-lg-dot" style="background:#2563eb"></span>Qwen3.8-Max</div><div class="fc-lg-i"><span class="fc-lg-dot" style="background:#0891b2"></span>Kimi K3</div><div class="fc-lg-i"><span class="fc-lg-dot" style="background:#7c3aed"></span>GLM-5.2</div><div class="fc-lg-i"><span class="fc-lg-dot" style="background:#ea580c"></span>DS-V4-Pro-0813</div><div class="fc-lg-i"><span class="fc-lg-dot" style="background:#059669"></span>DS-V4-Flash-0731</div></div></div><div class="fc-scores"><div class="fc-sc" style="--c:#2563eb"><div class="fc-sc-n">Qwen</div><div class="fc-sc-v">79</div><div class="fc-sc-l">均分</div></div><div class="fc-sc" style="--c:#0891b2"><div class="fc-sc-n">Kimi</div><div class="fc-sc-v">85</div><div class="fc-sc-l">均分</div></div><div class="fc-sc" style="--c:#7c3aed"><div class="fc-sc-n">GLM</div><div class="fc-sc-v">74</div><div class="fc-sc-l">均分</div></div><div class="fc-sc" style="--c:#ea580c"><div class="fc-sc-n">DS-Pro</div><div class="fc-sc-v">81</div><div class="fc-sc-l">均分</div></div><div class="fc-sc" style="--c:#059669"><div class="fc-sc-n">DS-Flash</div><div class="fc-sc-v">74</div><div class="fc-sc-l">均分</div></div></div><h3>特性矩阵</h3><table class="fc-fm">
+<div class="tp a" id="p-fc"><div class="fc-wrap"><div class="fc-radar"><svg viewBox="0 0 400 400" style="width:100%;max-width:360px;height:auto"><polygon points="200.0,169.0 226.8,184.5 226.8,215.5 200.0,231.0 173.2,215.5 173.2,184.5" fill="none" stroke="#e2e8f0" stroke-width="0.8"/><polygon points="200.0,138.0 253.7,169.0 253.7,231.0 200.0,262.0 146.3,231.0 146.3,169.0" fill="none" stroke="#e2e8f0" stroke-width="0.8"/><polygon points="200.0,107.0 280.5,153.5 280.5,246.5 200.0,293.0 119.5,246.5 119.5,153.5" fill="none" stroke="#e2e8f0" stroke-width="0.8"/><polygon points="200.0,76.0 307.4,138.0 307.4,262.0 200.0,324.0 92.6,262.0 92.6,138.0" fill="none" stroke="#e2e8f0" stroke-width="0.8"/><polygon points="200.0,45.0 334.2,122.5 334.2,277.5 200.0,355.0 65.8,277.5 65.8,122.5" fill="none" stroke="#e2e8f0" stroke-width="0.8"/><line x1="200" y1="200" x2="200.0" y2="45.0" stroke="#e2e8f0" stroke-width="0.8"/><text x="200.0" y="23.0" text-anchor="middle" dominant-baseline="middle" fill="#475569" font-size="12" font-weight="500">综合能力</text><line x1="200" y1="200" x2="334.2" y2="122.5" stroke="#e2e8f0" stroke-width="0.8"/><text x="353.3" y="111.5" text-anchor="middle" dominant-baseline="middle" fill="#475569" font-size="12" font-weight="500">编程</text><line x1="200" y1="200" x2="334.2" y2="277.5" stroke="#e2e8f0" stroke-width="0.8"/><text x="353.3" y="288.5" text-anchor="middle" dominant-baseline="middle" fill="#475569" font-size="12" font-weight="500">专业深度</text><line x1="200" y1="200" x2="200.0" y2="355.0" stroke="#e2e8f0" stroke-width="0.8"/><text x="200.0" y="377.0" text-anchor="middle" dominant-baseline="middle" fill="#475569" font-size="12" font-weight="500">稳定性</text><line x1="200" y1="200" x2="65.8" y2="277.5" stroke="#e2e8f0" stroke-width="0.8"/><text x="46.7" y="288.5" text-anchor="middle" dominant-baseline="middle" fill="#475569" font-size="12" font-weight="500">输出效率</text><line x1="200" y1="200" x2="65.8" y2="122.5" stroke="#e2e8f0" stroke-width="0.8"/><text x="46.7" y="111.5" text-anchor="middle" dominant-baseline="middle" fill="#475569" font-size="12" font-weight="500">性价比</text><polygon points="200.0,60.5 318.1,131.8 327.5,273.6 200.0,320.9 116.8,248.1 119.5,153.5" fill="#2563eb" fill-opacity="0.08" stroke="#2563eb" stroke-width="1.8"/><polygon points="200.0,52.8 328.9,125.6 323.5,271.3 200.0,339.5 81.9,268.2 135.6,162.8" fill="#0891b2" fill-opacity="0.08" stroke="#0891b2" stroke-width="1.8"/><polygon points="200.0,72.9 323.5,128.7 307.4,262.0 200.0,280.6 126.2,242.6 92.6,138.0" fill="#7c3aed" fill-opacity="0.08" stroke="#7c3aed" stroke-width="1.8"/><polygon points="200.0,66.7 312.8,134.9 300.7,258.1 200.0,327.1 106.0,254.3 79.2,130.2" fill="#ea580c" fill-opacity="0.08" stroke="#ea580c" stroke-width="1.8"/><polygon points="200.0,94.6 285.9,150.4 264.4,237.2 200.0,316.2 72.5,273.6 72.5,126.4" fill="#059669" fill-opacity="0.08" stroke="#059669" stroke-width="1.8"/></svg><div class="fc-legend"><div class="fc-lg-i"><span class="fc-lg-dot" style="background:#2563eb"></span>Qwen3.8-Max</div><div class="fc-lg-i"><span class="fc-lg-dot" style="background:#0891b2"></span>Kimi K3</div><div class="fc-lg-i"><span class="fc-lg-dot" style="background:#7c3aed"></span>GLM-5.2</div><div class="fc-lg-i"><span class="fc-lg-dot" style="background:#ea580c"></span>DS-V4-Pro-0813</div><div class="fc-lg-i"><span class="fc-lg-dot" style="background:#059669"></span>DS-V4-Flash-0731</div></div></div><div class="fc-scores"><div class="fc-sc" style="--c:#2563eb"><div class="fc-sc-n">Qwen</div><div class="fc-sc-v">79</div><div class="fc-sc-l">均分</div></div><div class="fc-sc" style="--c:#0891b2"><div class="fc-sc-n">Kimi</div><div class="fc-sc-v">85</div><div class="fc-sc-l">均分</div></div><div class="fc-sc" style="--c:#7c3aed"><div class="fc-sc-n">GLM</div><div class="fc-sc-v">74</div><div class="fc-sc-l">均分</div></div><div class="fc-sc" style="--c:#ea580c"><div class="fc-sc-n">DS-Pro</div><div class="fc-sc-v">81</div><div class="fc-sc-l">均分</div></div><div class="fc-sc" style="--c:#059669"><div class="fc-sc-n">DS-Flash</div><div class="fc-sc-v">74</div><div class="fc-sc-l">均分</div></div></div><h3>能力矩阵</h3><table class="fc-fm">
 <thead><tr><th>特性</th><th style="color:#2563eb">Qwen</th><th style="color:#0891b2">Kimi</th><th style="color:#7c3aed">GLM</th><th style="color:#ea580c">DS-Pro</th><th style="color:#059669">DS-Flash</th></tr></thead>
 <tbody>
 <tr><td>档位</td><td>旗舰思考档</td><td>旗舰思考档</td><td>旗舰思考档</td><td>旗舰思考档</td><td>快速档</td></tr>
 <tr><td>图片输入</td><td><span class="fc-yes">✅</span></td><td><span class="fc-yes">✅</span></td><td><span class="fc-no">❌</span></td><td><span class="fc-no">❌</span></td><td><span class="fc-no">❌</span></td></tr>
 <tr><td>思考占输出预算</td><td>否（预算机制最稳）</td><td>是</td><td>是（上限偏小）</td><td>是</td><td>上限偏小</td></tr>
 <tr><td>输入 / 输出价<div class="sub">元/百万tk</div></td><td>12 / 36</td><td>20 / 100</td><td>8 / 28</td><td>9 / 27</td><td>3 / 9</td></tr>
-<tr><td>总价</td><td>48 元</td><td>120 元</td><td>36 元</td><td>36 元</td><td class="fc-best">12 元</td></tr>
+<tr><td>总价</td><td>48 元</td><td>120 元</td><td>36 元</td><td>36 元</td><td>12 元</td></tr>
 <tr><td>优势</td><td>工程细节最讲究</td><td>综合能力最强</td><td>价格最低(36元)</td><td>性价比极高(36元)</td><td>最快(4x速度)</td></tr>
 <tr><td>短板</td><td>思考冗长</td><td>单价最高(120元)</td><td>稳定性最差</td><td>无图片输入</td><td>深度最浅</td></tr>
-</tbody></table><div class="fc-bars"><div class="fc-bar-title">总价对比（输入+输出 元/百万tk）</div><div class="fc-bar-r"><div class="fc-bar-l">Qwen</div>
-<div class="fc-bar-t"><div class="fc-bar-f" style="width:40%;background:linear-gradient(90deg,#2563eb22,#2563eb)"><span style="color:#2563eb">48 元</span></div></div></div><div class="fc-bar-r"><div class="fc-bar-l">Kimi</div>
-<div class="fc-bar-t"><div class="fc-bar-f" style="width:100%;background:linear-gradient(90deg,#0891b222,#0891b2)"><span style="color:#fff">120 元</span></div></div></div><div class="fc-bar-r"><div class="fc-bar-l">GLM</div>
-<div class="fc-bar-t"><div class="fc-bar-f" style="width:30%;background:linear-gradient(90deg,#7c3aed22,#7c3aed)"><span style="color:#7c3aed">36 元</span></div></div></div><div class="fc-bar-r"><div class="fc-bar-l">DS-Pro</div>
-<div class="fc-bar-t"><div class="fc-bar-f" style="width:30%;background:linear-gradient(90deg,#ea580c22,#ea580c)"><span style="color:#ea580c">36 元</span></div></div></div><div class="fc-bar-r"><div class="fc-bar-l">DS-Flash</div>
-<div class="fc-bar-t"><div class="fc-bar-f" style="width:10%;background:linear-gradient(90deg,#05966922,#059669)"><span style="color:#059669">12 元</span></div></div></div></div><h3>模型画像</h3><div class="fc-pc" style="--c:#2563eb">
+</tbody></table><h3>场景推荐</h3><div class="fc-usecases"><div class="fc-uc" style="--c:#0891b2">
+<div class="fc-uc-scene">追求极致质量</div>
+<div class="fc-uc-model" style="color:#0891b2">Kimi K3</div>
+<div class="fc-uc-desc">综合最优、代码最强，篇幅克制有深度。贵但值。</div>
+</div><div class="fc-uc" style="--c:#2563eb">
+<div class="fc-uc-scene">工程与细节</div>
+<div class="fc-uc-model" style="color:#2563eb">Qwen3.8-Max</div>
+<div class="fc-uc-desc">设计/工程细节最讲究，思考预算不占输出，机制最稳。</div>
+</div><div class="fc-uc" style="--c:#ea580c">
+<div class="fc-uc-scene">预算敏感的旗舰需求</div>
+<div class="fc-uc-model" style="color:#ea580c">DS-V4-Pro-0813</div>
+<div class="fc-uc-desc">正确率接近 Kimi/Qwen，成本仅 36 元，最佳平替。</div>
+</div><div class="fc-uc" style="--c:#059669">
+<div class="fc-uc-scene">高速批量处理</div>
+<div class="fc-uc-model" style="color:#059669">DS-V4-Flash-0731</div>
+<div class="fc-uc-desc">快 4 倍、12 元最便宜、零截断。深度要求不高时首选。</div>
+</div><div class="fc-uc" style="--c:#7c3aed">
+<div class="fc-uc-scene">编程 + 低预算</div>
+<div class="fc-uc-model" style="color:#7c3aed">GLM-5.2</div>
+<div class="fc-uc-desc">编程能力强且仅 36 元。但稳定性风险需做好重试准备。</div>
+</div></div><h3>模型画像</h3><div class="fc-pc" style="--c:#2563eb">
 <div class="fc-pc-head"><div><span class="fc-pc-name">Qwen3.8-Max</span> <span class="fc-pc-tier">旗舰思考档</span></div>
 <div class="fc-pc-price">12 / 36 元/百万tk（共 48 元）</div></div>
 <p class="fc-pc-prof">多场景优秀，设计与工程细节最讲究，但思考冗长、爱把简单题写成长篇。偶发运行时崩溃。</p>
